@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Alexandre Gauvain"
+title                    : "Hydrology scientist"
 title_separator          : "-"
 name                     : &name "Alexandre Gauvain"
 description              : &description "personal description"
