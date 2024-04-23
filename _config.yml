@@ -21,7 +21,7 @@ repository               : "Alex-Gauvain/Alex-Gauvain.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "AG_flat.jpg"
   name             : "Alexandre Gauvain"
   pronouns         : # example: "she/her"  
   bio              : "Post-Doc in hydrology modeling"
