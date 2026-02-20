@@ -57,6 +57,7 @@ include:
   - .htaccess
   - _pages
   - files
+  - google_scholar_crawler
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -81,7 +82,6 @@ exclude:
   - package.json
   - tmp
   - vendor
-  - google_scholar_crawler
   - github_myprofile_updater
 keep_files:
   - .git
