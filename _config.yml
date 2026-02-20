@@ -25,8 +25,9 @@ author:
   name             : "Alexandre Gauvain"
   pronouns         : # example: "she/her"  
   bio              : "Post-Doc in hydrology modeling"
-  location         : "Laboratoire de Météorology Dynamique - Paris"
-  employer         : "CNRS - Sorbonne Université"
+  location         : "Sorbonne Université - Paris"
+  lab              : "Laboratoire de Météorologie Dynamique"
+  employer         : "IPSL - CNRS"
   uri              : # URL
   email            : "alexandre.gauvain.ag@gmail.com" 
 
@@ -42,7 +43,7 @@ author:
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : "academicpages"
+  github           : # Username "academicpages"
   gitlab           : "test"
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
@@ -118,7 +119,7 @@ bing_site_verification   :
 alexa_site_verification  :
 yandex_site_verification :
 
-
+theme: minimal-mistakes-jekyll
 # Social Sharing
 twitter:
   username               : &twitter
