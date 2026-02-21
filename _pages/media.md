@@ -8,6 +8,6 @@ redirect_from:
   - /media.html
 ---
 
-<span class='anchor' id='about-me'></span>
+<span class='anchor' id='media'></span>
 
 test
