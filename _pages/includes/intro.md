@@ -8,6 +8,6 @@ My research interest includes speech synthesis, neural machine translation and a
 
 To promote the communication among the Chinese ML & NLP community, we (along with other 11 young scholars worldwide) founded the [MLNLP community](https://space.bilibili.com/168887299) in 2021. I am honored to be one of the chairs of the MLNLP committee.
 
-<iframe width="1900" height="1080"
+<iframe width="1910" height="1080"
 src="https://www.youtube.com/embed/ttvEmYBBuW8">
 </iframe>
