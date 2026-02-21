@@ -8,5 +8,4 @@ redirect_from:
   - /media.html
 ---
 
-<span class='anchor' id='media'></span>
- test
+test
