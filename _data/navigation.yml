@@ -21,8 +21,6 @@ main:
 
   - title: "Internships"
     url: "/#-internships"
-  
-  - title: "Media"
-    url: "/media-me"
 
-  
+  - title: "Media"
+    url: "/media/"

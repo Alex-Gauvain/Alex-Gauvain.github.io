@@ -1,13 +1,9 @@
 ---
 permalink: /media/
-title: ""
-excerpt: ""
+title: "Media"
 author_profile: true
-redirect_from: 
-  - /media/
-  - /media.html
 ---
 
 <span class='anchor' id='media-me'></span>
 
-test
+Contenu de la page media (texte, images, vidéos, etc.).
