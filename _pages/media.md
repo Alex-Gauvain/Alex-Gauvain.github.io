@@ -4,7 +4,8 @@ title: ""
 excerpt: ""
 author_profile: true
 redirect_from: 
-  - /media
+  - /media/
+  - /media.html
 ---
 
 <span class='anchor' id='about-me'></span>
