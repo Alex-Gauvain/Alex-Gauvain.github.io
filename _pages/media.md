@@ -1,5 +1,5 @@
 ---
-permalink: /media/
+permalink: /
 title: ""
 excerpt: ""
 author_profile: true
@@ -8,6 +8,6 @@ redirect_from:
   - /media.html
 ---
 
-<span class='anchor' id='media'></span>
+<span class='anchor' id='media-e'></span>
 
 test
