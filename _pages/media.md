@@ -1,5 +1,5 @@
 ---
-permalink: /
+permalink: /media/
 title: ""
 excerpt: ""
 author_profile: true
