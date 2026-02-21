@@ -1,7 +1,7 @@
 ---
 permalink: /media/
 title: "Media"
-layout: compress
+layout: single
 author_profile: true
 ---
 
