@@ -7,4 +7,6 @@ redirect_from:
   - /media
 ---
 
+<span class='anchor' id='about-me'></span>
+
 test
