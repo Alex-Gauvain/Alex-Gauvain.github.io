@@ -114,9 +114,13 @@ h1:before, .anchor:before {
   text-align: justify;
 }
 
-.page {
-  width: 70%;
-}
-.sidebar {
-  width: 25%;
+@media (min-width: 925px) {
+  .page {
+    float: right;
+    width: 85%;
+  }
+
+  .sidebar {
+    width: 12%;
+  }
 }
