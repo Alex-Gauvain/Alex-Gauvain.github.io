@@ -23,7 +23,7 @@ repository               : "academicpages/academicpages.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "AG_flat.jpg"
+  avatar           : "AG_flat.jpg" # filename of avatar image placed in /images/ (e.g. "avatar.jpg")
   name             : "Alexandre Gauvain"
   pronouns         : # example: "she/her"  
   bio              : "PhD in Hydrology Modeling"
