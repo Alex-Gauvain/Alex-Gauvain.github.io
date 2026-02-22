@@ -1,0 +1,8 @@
+# main links links
+main:
+
+  - title: "About Me"
+    url: "/about-me/"
+
+  - title: "Media"
+    url: "/media/"
