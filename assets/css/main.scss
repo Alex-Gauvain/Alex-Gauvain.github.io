@@ -110,10 +110,13 @@ h1:before, .anchor:before {
     font-size: .8em;
 }
 
-.initial-content {
-  max-width: 2400px;
-}
-
 .page__content p {
   text-align: justify;
+}
+
+.page {
+  width: 70%;
+}
+.sidebar {
+  width: 25%;
 }
