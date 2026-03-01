@@ -1,13 +1,158 @@
-I am now working on audio-driven video generation and text-to-speech research. If you are seeking any form of **academic cooperation**, please feel free to email me at [rayeren613@gmail.com](mailto:rayeren613@gmail.com). We are hiring interns!
+## Research interests
 
-I graduated from [Chu Kochen Honors College](http://ckc.zju.edu.cn/ckcen/main.htm), Zhejiang University (浙江大学竺可桢学院) with a bachelor's degree and from the Department of Computer Science and Technology, Zhejiang University (浙江大学计算机科学与技术学院) with a master's degree, advised by [Zhou Zhao (赵洲)](https://person.zju.edu.cn/zhaozhou). I also collaborate with [Xu Tan (谭旭)](https://www.microsoft.com/en-us/research/people/xuta/), [Tao Qin (秦涛)](https://www.microsoft.com/en-us/research/people/taoqin/) and [Tie-yan Liu (刘铁岩)](https://www.microsoft.com/en-us/research/people/tyliu/) from [Microsoft Research Asia](https://www.microsoft.com/en-us/research/group/machine-learning-research-group/) <img src='./images/microsoft_logo.svg' style="width: 4em;"> closely. 
+## About me
 
-I won the [Baidu Scholarship](https://baike.baidu.com/item/%E7%99%BE%E5%BA%A6%E5%A5%96%E5%AD%A6%E9%87%91/9929412) (10 candidates worldwide each year) and [ByteDance Scholars Program](https://ur.bytedance.com/scholarship) (10 candidates worldwide each year) in 2020 and was selected as one of [the top 100 AI Chinese new stars](https://mp.weixin.qq.com/s?__biz=MzA4NzQ5MTA2NA==&mid=2653639431&idx=1&sn=25b6368c1954419b9090840347d9a27d&chksm=8be75b90bc90d286a5af3ef8e610e822d705dc3cf4382b45e3f14489f3e7ec4fd8c95ed0eceb&mpshare=1&scene=2&srcid=0511LMlj9Qv9DeIZAjMjYAU9&sharer_sharetime=1620731348139&sharer_shareid=631c113940cb81f34895aa25ab14422a#rd) and AI Chinese New Star Outstanding Scholar (10 candidates worldwide each year). 
+I pursued my PhD thesis (2019 - 2022) at Géosciences Rennnes from the University of Rennes (France) under the supervision of Jean-Raynald de Dreuzy (CNRS) and Luc Aquilina. The subject was about “Numerical simulation of unsaturated porous media flows by an adaptive discontinuous Galerkin method: application to sandy beaches”. The motivation is to provide a robust, efficient and accurate tool to model and compute wave-induced flows inside sandy beaches. In particular, I focused on Richards' equation to model flow dynamics in unsaturated porous media. Despite its current use, this equation is numerically challenging to solve for a wide range of cases, for instance in presence of steep wetting fronts. Moreover, at the start of my PhD, I decided to use Discontinuous Galerkin (DG) methods because of their flexibility, in particular for adaptive mesh refinement. Based on these choices, I developed a computational code called Rivage which demonstrates its abilities for such simulations through various numerical examples.
 
-My research interest includes speech synthesis, neural machine translation and automatic music generation. I have published 50+ papers <a href='https://scholar.google.com/citations?user=KxcQzy8AAAAJ'><img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FRayeRen%2Frayeren.github.io@google-scholar-stats%2Fgs_data_shieldsio.json&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a> at the top international AI conferences such as NeurIPS, ICML, ICLR, KDD. 
+I defended my PhD thesis on the 11th Janaury 2021 in front of a jury made up of:
+- Philippe Helluy, Professor, University of Strasbourg - President of the Jury
+- Vít Dolejší, Professor, Charles University in Prague - Reviewer
+- Philippe Ackerer, Professor, University of Strasbourg - Reviewer
+- Béatrice Rivière, Professor, Rice University - Examiner
+- France Floc'h, Lecturer, University of Western Brittany - Examiner
+- Stéphane Bonelli, Research Director, INRAE - Invited
 
-To promote the communication among the Chinese ML & NLP community, we (along with other 11 young scholars worldwide) founded the [MLNLP community](https://space.bilibili.com/168887299) in 2021. I am honored to be one of the chairs of the MLNLP committee.
+I was in a PostDoc for 2021 at Géosciences Montpellier laboratory from the University of Montpellier (France). I was mentored by Frédéric Bouchette. The aim was to continue my PhD work by carrying extended applications concerning large-scale experiments and real beaches. This should provide new insights and perspectives about the physics for the oceanographic/littoralist community. In addition, I am improving Rivage code for the simulation of Richards' equation by taking care more specifically of the nonlinearities and degeneracies rising at multiple space/time scales.
 
-<iframe width="1910" height="1080"
+I am currently involved in a PostDoc at the Department of Technical Mathematics, Faculty of Mechanichal Engineering in the Czech Technical University in Prague. I am mentored by Petr Sváček. The project deals with the development of high order discontinuous Galerkin methods for numerical solution of PDEs in the continuum mechanics.
+
+
+
+<iframe width="191" height="108"
 src="https://www.youtube.com/embed/ttvEmYBBuW8">
 </iframe>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+<style>
+
+/* CONTENEUR PRINCIPAL */
+#viewerContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ZONE DES PAGES */
+#viewer {
+    display: flex;
+    gap: 10px;
+}
+
+/* PAGES */
+canvas {
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+
+/* BOUTONS OVERLAY */
+.navButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    font-size: 30px;
+    padding: 10px 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.navButton:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+#prevBtn {
+    left: 0px;
+}
+
+#nextBtn {
+    right: 0px;
+}
+</style>
+
+<body>
+
+<div id="viewerContainer">
+    <button id="prevBtn" class="navButton" onclick="prevPages()">❮</button>
+
+    <div id="viewer">
+        <canvas id="page1"></canvas>
+        <canvas id="page2"></canvas>
+    </div>
+
+    <button id="nextBtn" class="navButton" onclick="nextPages()">❯</button>
+</div>
+
+<script>
+const url = "files/BD-Normandie-Nappes.pdf";
+const PAGE_WIDTH = 485;
+
+let pdfDoc = null;
+let currentPage = 1;
+
+pdfjsLib.getDocument(url).promise.then(function(pdf) {
+    pdfDoc = pdf;
+    renderPages();
+});
+
+function renderPage(pageNumber, canvasId) {
+    pdfDoc.getPage(pageNumber).then(function(page) {
+
+        const viewport = page.getViewport({ scale: 1 });
+        const scale = PAGE_WIDTH / viewport.width;
+        const scaledViewport = page.getViewport({ scale: scale });
+
+        const canvas = document.getElementById(canvasId);
+        const context = canvas.getContext("2d");
+
+        canvas.height = scaledViewport.height;
+        canvas.width = scaledViewport.width;
+
+        page.render({
+            canvasContext: context,
+            viewport: scaledViewport
+        });
+    });
+}
+
+function renderPages() {
+    renderPage(currentPage, "page1");
+
+    if (currentPage + 1 <= pdfDoc.numPages) {
+        renderPage(currentPage + 1, "page2");
+    } else {
+        const canvas2 = document.getElementById("page2");
+        const context2 = canvas2.getContext("2d");
+        context2.clearRect(0, 0, canvas2.width, canvas2.height);
+    }
+}
+
+function nextPages() {
+    if (currentPage + 2 <= pdfDoc.numPages) {
+        currentPage += 2;
+        renderPages();
+    }
+}
+
+function prevPages() {
+    if (currentPage - 2 >= 1) {
+        currentPage -= 2;
+        renderPages();
+    }
+}
+</script>
+
+</body>
+© Grand Format
+
+
+<body>
+<center>
+<img src="files/Breville.gif" alt="Animation GIF" style="width: 80%;">
+</center>
+</body>
+
+test
