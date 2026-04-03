@@ -9,10 +9,10 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "dirt" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                    : "Researcher Scientist"
+title                    : "Alexandre Gauvain"
 title_separator          : "-"
 name                     : &name "Alexandre Gauvain"
-description              : &description "Alexandre Gauvain's academic portfolio"   # Update this with a general description of your site, this is the default if not overridden by a page
+description              : &description "Hydrologist, hydrogeologist and scientific modeller"   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : "https://Alex-Gauvain.github.io" # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -26,7 +26,7 @@ author:
   avatar           : "AG_flat.jpg" # filename of avatar image placed in /images/ (e.g. "avatar.jpg")
   name             : "Alexandre Gauvain"
   pronouns         : # example: "she/her"  
-  bio              : "PhD in Hydrology Modeling"
+  bio              : "Hydrologist, hydrogeologist and scientific modeller"
   location         : "Sorbonne University, Paris, France"
   employer         : "CNRS, IPSL, LMD"
   uri              : # URL
@@ -84,12 +84,14 @@ author:
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
-  books:
-    title: 'Books'
   manuscripts:
-    title: 'Journal Articles'    
+    title: 'Journal Articles and Preprints'
   conferences:
-    title: 'Conference Papers'
+    title: 'Conference Papers and Abstracts'
+  reports:
+    title: 'Reports'
+  theses:
+    title: 'Theses and Dissertations'
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews

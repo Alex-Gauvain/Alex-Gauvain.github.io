@@ -1,10 +1,13 @@
 ---
-title: "Residence time distributions in non-uniform aquifer recharge and thickness conditions--An analytical approach based on the assumption of Dupuit-Forchheimer"
+title: "Residence Time Distributions in Non-Uniform Aquifer Recharge and Thickness Conditions: An Analytical Approach Based on the Assumption of Dupuit-Forchheimer"
+authors: "Sarah Leray, Alexandre Gauvain, Jean-Raynald de Dreuzy"
 category: manuscripts
 collection: publications
-permalink: /publication/2019-01-01-Residence-time-distributions-in-non-uniform-aquifer-recharge-and-thickness-conditions-An-analytical-approach-based-on-the-assumption-of-Dupuit-Forchheimer
+permalink: /publication/leray2019residence/
 date: 2019-01-01
-venue: 'Journal of Hydrology'
-citation: ' Sarah Leray,  Alexandre Gauvain,  Jean-Raynald Dreuzy, &quot;Residence time distributions in non-uniform aquifer recharge and thickness conditions--An analytical approach based on the assumption of Dupuit-Forchheimer.&quot; Journal of Hydrology, 2019.'
+venue: "Journal of Hydrology"
+citation: "S. Leray, A. Gauvain and J.-R. de Dreuzy. Residence Time Distributions in Non-Uniform Aquifer Recharge and Thickness Conditions: An Analytical Approach Based on the Assumption of Dupuit-Forchheimer. Journal of Hydrology, 2019."
+paperurl: "https://doi.org/10.1016/j.jhydrol.2019.04.032"
 ---
-Use [Google Scholar](https://scholar.google.com/scholar?q=Residence+time+distributions+in+non+uniform+aquifer+recharge+and+thickness+conditions++An+analytical+approach+based+on+the+assumption+of+Dupuit+Forchheimer){:target="_blank"} for full citation
+
+Journal article on the effect of recharge structure and aquifer geometry on groundwater residence-time distributions.

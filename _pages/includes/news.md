@@ -1,10 +1,7 @@
-# 🔥 News
- *2024.03*: 🎉 Two papers are accepted by ICLR 2024
+## Research highlights
 
- *2023.05*: 🎉 Five papers are accepted by ACL 2023
- 
- *2023.01*: DiffSinger was introduced in [a very popular video](https://www.bilibili.com/video/BV1uM411t7ZJ) (2000k+ views) in Bilibili!
- 
- *2023.01*: I join TikTok <img src='./images/tiktok.png' style='width: 6em;'> as a speech research scientist in Singapore!
- 
- *2022.02*: I release a modern and responsive academic personal [homepage template](https://github.com/RayeRen/acad-homepage.github.io). Welcome to STAR and FORK!
+- *2026*: HydroModPy is the subject of a technical note submitted to *Hydrology and Earth System Sciences*, while two new Mars studies are in preparation on early hydrology and reconstructed palaeotopography.
+- *2025*: I presented work on early Mars climate at EPSC-DPS and at the Mars Through Time conference in Paris, and co-supervised two internships on Mars hydrology and Noachian-Hesperian topography.
+- *2025*: I contributed to the graphic report *Quand les nappes montent*, produced with Grand Format to make groundwater-rise hazards visible to a broader audience.
+- *2024*: Our paper on coastal aquifer heterogeneity was published in the *Journal of Hydrology*, and I presented the global Mars hydrology model at the 10th International Conference on Mars.
+- *2023*: I presented HydroModPy at the Reunion des sciences de la Terre and started developing a new planetary-scale hydrological model for early Mars at LMD.

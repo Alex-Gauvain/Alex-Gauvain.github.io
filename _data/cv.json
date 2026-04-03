@@ -1,152 +1,223 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
-    "email": "none@example.org",
-    "phone": "",
-    "website": "https://academicpages.github.io",
-    "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
+    "name": "Alexandre Gauvain",
+    "email": "alexandre.gauvain.ag@gmail.com",
+    "phone": "+33 6 76 82 72 55",
+    "website": "https://alex-gauvain.github.io",
+    "summary": "Postdoctoral researcher in hydrology and hydrogeology working on groundwater modelling, climate-change impacts on water resources, and planetary hydrology for early Mars.",
     "location": {
-      "address": "",
-      "postalCode": "",
-      "city": "Earth",
-      "countryCode": "US",
-      "region": ""
+      "address": "Sorbonne Université, Laboratoire de Météorologie Dynamique",
+      "postalCode": "75005",
+      "city": "Paris",
+      "countryCode": "FR",
+      "region": "Ile-de-France"
     },
     "profiles": [
       {
         "network": "Google Scholar",
-        "username": "",
-        "url": "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+        "username": "KxcQzy8AAAAJ",
+        "url": "https://scholar.google.com/citations?user=KxcQzy8AAAAJ&hl"
       },
       {
         "network": "ORCID",
-        "username": "",
-        "url": "https://orcid.org/yourorcidurl"
+        "username": "0000-0002-9473-1108",
+        "url": "https://orcid.org/0000-0002-9473-1108"
       },
       {
         "network": "GitHub",
-        "username": "academicpages",
-        "url": "https://github.com/academicpages"
+        "username": "Alex-Gauvain",
+        "url": "https://github.com/Alex-Gauvain"
       }
     ]
   },
-  "work": [],
+  "work": [
+    {
+      "name": "Laboratoire de Météorologie Dynamique, CNRS / IPSL / Sorbonne Université",
+      "position": "Postdoctoral researcher",
+      "website": "https://www.lmd.ipsl.fr/en/home-2/",
+      "startDate": "2022-11-01",
+      "endDate": "",
+      "summary": "Development of a global hydrological model for early Mars within the ERC Mars Through Time project.",
+      "highlights": []
+    },
+    {
+      "name": "Geosophy",
+      "position": "Research engineer in hydrogeological modelling",
+      "website": "https://geosophy.io/",
+      "startDate": "2022-03-01",
+      "endDate": "2022-11-01",
+      "summary": "Groundwater-flow and heat-transport modelling for geothermal potential and feasibility studies.",
+      "highlights": []
+    },
+    {
+      "name": "Géosciences Rennes / OSUR",
+      "position": "Research engineer in hydrogeology",
+      "website": "https://geosciences.univ-rennes.fr/",
+      "startDate": "2017-04-01",
+      "endDate": "2019-02-01",
+      "summary": "Numerical modelling of coastal groundwater systems and contribution to the RIVAGES Normands 2100 project set-up.",
+      "highlights": []
+    }
+  ],
   "education": [
     {
-      "institution": "GitHub University",
-      "area": "Ph.D in Version Control Theory",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2018",
+      "institution": "Université de Rennes 1 / Géosciences Rennes",
+      "area": "PhD in Earth and Environmental Sciences",
+      "studyType": "Doctorate",
+      "startDate": "2019",
+      "endDate": "2022",
       "gpa": null,
       "courses": []
     },
     {
-      "institution": "GitHub University",
-      "area": "M.S. in Jekyll",
-      "studyType": "",
-      "startDate": "",
+      "institution": "Université de Rennes 1",
+      "area": "Earth and Environmental Sciences (Hydro3)",
+      "studyType": "MSc",
+      "startDate": "2014",
+      "endDate": "2016",
+      "gpa": null,
+      "courses": []
+    },
+    {
+      "institution": "Université Bretagne Sud",
+      "area": "Environmental Treatment and Valorisation Processes",
+      "studyType": "Bachelor's degree",
+      "startDate": "2013",
       "endDate": "2014",
       "gpa": null,
       "courses": []
     },
     {
-      "institution": "GitHub University",
-      "area": "B.S. in GitHub",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2012",
+      "institution": "Université Bretagne Sud",
+      "area": "Health, Safety and Environment",
+      "studyType": "DUT",
+      "startDate": "2011",
+      "endDate": "2013",
       "gpa": null,
       "courses": []
     }
   ],
-  "skills": [],
-  "languages": [],
-  "interests": [],
+  "skills": [
+    {
+      "name": "Research software",
+      "level": "Advanced",
+      "keywords": ["HydroModPy", "Python", "Fortran", "Git", "Reproducible workflows"]
+    },
+    {
+      "name": "Hydrological modelling",
+      "level": "Advanced",
+      "keywords": ["Groundwater modelling", "Recharge", "Transit times", "Climate scenarios"]
+    },
+    {
+      "name": "Geospatial analysis",
+      "level": "Advanced",
+      "keywords": ["QGIS", "ArcGIS", "Catchment delineation", "Hydrography"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "French",
+      "fluency": "Native"
+    },
+    {
+      "language": "English",
+      "fluency": "B2"
+    },
+    {
+      "language": "Spanish",
+      "fluency": "A1"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Hydrology and hydrogeology",
+      "keywords": ["Groundwater", "Catchments", "Recharge", "Transit times"]
+    },
+    {
+      "name": "Planetary hydrology",
+      "keywords": ["Early Mars", "Geomorphology", "Climate modelling"]
+    },
+    {
+      "name": "Open science",
+      "keywords": ["Research software", "Reproducibility", "Teaching"]
+    }
+  ],
   "references": [],
   "publications": [
     {
-      "name": "Paper Title Number 1",
-      "publisher": "Journal 1",
-      "releaseDate": "2009-10-01",
-      "website": "https://academicpages.github.io/files/paper1.pdf",
-      "summary": "This paper is about the number 1. The number 2 is left for future work."
+      "name": "A Global High-Resolution Hydrological Model to Simulate the Dynamics of Surface Liquid Reservoirs: Application on Mars",
+      "publisher": "Geoscientific Model Development, EGUsphere",
+      "releaseDate": "2025-01-01",
+      "website": "https://doi.org/10.5194/egusphere-2025-4992",
+      "summary": "Submitted manuscript describing a km-scale hydrological model for dynamic surface-water reservoirs on early Mars."
     },
     {
-      "name": "Paper Title Number 2",
-      "publisher": "Journal 1",
-      "releaseDate": "2010-10-01",
-      "website": "https://academicpages.github.io/files/paper2.pdf",
-      "summary": "This paper is about the number 2. The number 3 is left for future work."
+      "name": "Technical Note: HydroModPy -- a Python toolbox for deploying catchment-scale shallow groundwater models",
+      "publisher": "Hydrology and Earth System Sciences, EGUsphere",
+      "releaseDate": "2026-01-01",
+      "website": "https://doi.org/10.5194/egusphere-2026-868",
+      "summary": "Submitted technical note presenting HydroModPy as an open-source workflow for catchment-scale groundwater modelling."
     },
     {
-      "name": "Paper Title Number 3",
-      "publisher": "Journal 1",
-      "releaseDate": "2015-10-01",
-      "website": "https://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about the number 3. The number 4 is left for future work."
+      "name": "Characterizing Coastal Aquifer Heterogeneity from a Single Piezometer Head Chronicle",
+      "publisher": "Journal of Hydrology",
+      "releaseDate": "2024-01-01",
+      "website": "https://doi.org/10.1016/j.jhydrol.2024.131859",
+      "summary": "Journal article on diagnosing coastal aquifer heterogeneity from a single long piezometric record."
     },
     {
-      "name": "Paper Title Number 4",
-      "publisher": "GitHub Journal of Bugs",
-      "releaseDate": "2024-02-17",
-      "website": "https://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about fixing template issue #693."
+      "name": "Geomorphological Controls on Groundwater Transit Times: A Synthetic Analysis at the Hillslope Scale",
+      "publisher": "Water Resources Research",
+      "releaseDate": "2021-01-01",
+      "website": "https://doi.org/10.1029/2020WR029463",
+      "summary": "Journal article linking landscape organisation and groundwater transit-time distributions."
     }
   ],
   "presentations": [
     {
-      "name": "Talk 1 on Relevant Topic in Your Field",
-      "event": "UC San Francisco, Department of Testing",
-      "date": "2012-03-01",
-      "location": "San Francisco, CA, USA",
-      "description": ""
+      "name": "Constraining Early Mars Climate Through Coupled Hydrological Modeling and Comparison with Geomorphological Evidence",
+      "event": "Mars Through Time conference",
+      "date": "2025-09-01",
+      "location": "Paris, France",
+      "description": "Oral presentation on using hydrology and geomorphology together to test climate scenarios for early Mars."
     },
     {
-      "name": "Tutorial 1 on Relevant Topic in Your Field",
-      "event": "UC-Berkeley Institute for Testing Science",
-      "date": "2013-03-01",
-      "location": "Berkeley, CA, USA",
-      "description": ""
+      "name": "A Global High-Resolution Hydrological Model: Conceptual Study of the Distribution of Surface Water Reservoirs on Early Mars",
+      "event": "Tenth International Conference on Mars",
+      "date": "2024-07-01",
+      "location": "Pasadena, California, USA",
+      "description": "Presentation of a global high-resolution hydrological model for early Mars."
     },
     {
-      "name": "Talk 2 on Relevant Topic in Your Field",
-      "event": "London School of Testing",
-      "date": "2014-02-01",
-      "location": "London, UK",
-      "description": ""
-    },
-    {
-      "name": "Conference Proceeding talk 3 on Relevant Topic in Your Field",
-      "event": "Testing Institute of America 2014 Annual Conference",
-      "date": "2014-03-01",
-      "location": "Los Angeles, CA, USA",
-      "description": ""
+      "name": "HydroModPy: a Python application for automating large-scale catchment model deployment",
+      "event": "Réunion des sciences de la Terre 2023",
+      "date": "2023-10-01",
+      "location": "Rennes, France",
+      "description": "Presentation of HydroModPy as an open-source workflow for catchment-scale modelling."
     }
   ],
   "teaching": [
     {
-      "course": "Teaching experience 1",
-      "institution": "University 1, Department",
-      "date": "2014-01-01",
-      "role": "Undergraduate course",
-      "description": ""
+      "course": "GIS practical sessions for Master's students in Water Sciences",
+      "institution": "Université de Rennes",
+      "date": "2019-09-01",
+      "role": "Teaching",
+      "description": "Practical sessions in QGIS and ArcGIS focused on hydrological-risk mapping and spatial analysis."
     },
     {
-      "course": "Teaching experience 2",
-      "institution": "University 1, Department",
-      "date": "2015-01-01",
-      "role": "Workshop",
-      "description": ""
+      "course": "Field supervision in hydrogeology and water sciences",
+      "institution": "Université de Rennes",
+      "date": "2019-09-15",
+      "role": "Field supervision",
+      "description": "Field campaigns in Normandy and Brittany linking measurements, site interpretation and hydrogeological reasoning."
+    },
+    {
+      "course": "HydroModPy training and onboarding",
+      "institution": "Geosciences Rennes and partner laboratories",
+      "date": "2022-01-01",
+      "role": "Software training",
+      "description": "Training for interns, PhD students and postdoctoral researchers using HydroModPy for catchment-scale modelling."
     }
   ],
-  "portfolio": [
-    {
-      "name": "Portfolio item number 1",
-      "category": "portfolio",
-      "date": "",
-      "url": "",
-      "description": "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
-    }
-  ]
+  "portfolio": []
 }
