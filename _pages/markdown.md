@@ -14,12 +14,10 @@ redirect_from:
 * Basic config options: _config.yml
 * Top navigation bar config: _data/navigation.yml
 * Single pages: _pages/
-* Collections of pages are .md or .html files in:
-  * _publications/
-  * _portfolio/
-  * _posts/
-  * _teaching/
-  * _talks/
+* Content collections stored as pages: _portfolio/, _posts/, _teaching/
+* Publication data generated from BibTeX: _data/generated_publications.json
+* Talk and poster data generated from BibTeX: _data/generated_talks.json
+* BibTeX to Jekyll data generator: markdown_generator/bib_to_jekyll_data.py
 * Footer: _includes/footer.html
 * Static files (like PDFs): /files/
 * Profile image (can set in _config.yml): images/profile.png
@@ -39,6 +37,9 @@ redirect_from:
 
 * While GitHub Pages prevents server side code from running, client-side scripts are supported.
   * This means that Google Analytics is supported, and [the wiki](https://github.com/academicpages/academicpages.github.io/wiki/Adding-Google-Analytics) should contain the most up-to-date information on getting it working.
+
+* In this repository, talks and publications are no longer authored as one Markdown file per item.
+  * Update the BibTeX sources in ../Career/, then run scripts/build_from_bib.sh or the VS Code task to regenerate the site data and rebuild.
 
 * Your CV can be written using either Markdown ([preview](https://academicpages.github.io/cv/)) or generated via JSON ([preview](https://academicpages.github.io/cv-json/)) and the layouts are slightly different. You can update the path to the one being used in `_data/navigation.yml` with the JSON formatted CV being hidden by default.
 

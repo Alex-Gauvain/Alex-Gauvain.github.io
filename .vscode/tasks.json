@@ -1,0 +1,15 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Site: build from BibTeX",
+			"type": "shell",
+			"command": "bash",
+			"args": [
+				"scripts/build_from_bib.sh"
+			],
+			"isBackground": false,
+			"group": "build"
+		}
+	]
+}

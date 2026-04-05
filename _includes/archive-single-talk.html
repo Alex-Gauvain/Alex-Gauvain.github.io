@@ -1,15 +1,49 @@
 {% include base_path %}
 
-{% if post.header.teaser %}
-  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
+{% assign entry = include.item | default: post %}
+
+{% if entry.header.teaser %}
+  {% capture teaser %}{{ entry.header.teaser }}{% endcapture %}
 {% else %}
   {% assign teaser = site.teaser %}
 {% endif %}
 
-{% if post.id %}
-  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% if entry.id %}
+  {% assign title = entry.title | markdownify | remove: "<p>" | remove: "</p>" %}
 {% else %}
-  {% assign title = post.title %}
+  {% assign title = entry.title %}
+{% endif %}
+
+{% assign title_link = "" %}
+{% assign resource_label = "" %}
+{% assign resource_href = "" %}
+{% assign resource_text = "" %}
+
+{% if entry.doi_url != blank %}
+  {% assign title_link = entry.doi_url %}
+  {% assign resource_label = "DOI" %}
+  {% assign resource_href = entry.doi_url %}
+  {% assign resource_text = entry.doi | default: entry.doi_url | replace: "https://doi.org/", "" | replace: "http://doi.org/", "" %}
+{% elsif entry.external_url != blank %}
+  {% assign title_link = entry.external_url %}
+  {% assign resource_label = "URL" %}
+  {% assign resource_href = entry.external_url %}
+  {% assign resource_text = entry.external_url %}
+{% elsif entry.paperurl != blank %}
+  {% assign title_link = entry.paperurl %}
+  {% if entry.paperurl contains "doi.org/" %}
+    {% assign resource_label = "DOI" %}
+    {% assign resource_href = entry.paperurl %}
+    {% assign resource_text = entry.paperurl | replace: "https://doi.org/", "" | replace: "http://doi.org/", "" %}
+  {% else %}
+    {% assign resource_label = "URL" %}
+    {% assign resource_href = entry.paperurl %}
+    {% assign resource_text = entry.paperurl %}
+  {% endif %}
+{% elsif entry.link != blank %}
+  {% assign title_link = entry.link %}
+{% elsif entry.url != blank %}
+  {% assign title_link = base_path | append: entry.url %}
 {% endif %}
 
 <div class="{{ include.type | default: "list" }}__item">
@@ -25,18 +59,55 @@
           alt="">
       </div>
     {% endif %}
-    <h2 class="archive__item-title" itemprop="headline">
-      {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-      {% else %}
-        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
+    {% capture event_line %}
+      {% if entry.type != blank %}{{ entry.type }}{% endif %}
+      {% if entry.venue != blank %}{% if entry.type != blank %}, {% endif %}{{ entry.venue }}{% endif %}
+      {% if entry.location != blank %}{% if entry.type != blank or entry.venue != blank %}, {% endif %}{{ entry.location }}{% endif %}
+    {% endcapture %}
+    {% assign event_line = event_line | strip %}
+    <div class="archive-entry__details archive-entry__details--compact">
+      <h2 class="archive__item-title archive-entry__title" itemprop="headline">
+        <span class="archive-entry__line">
+          <i class="fa fa-bullhorn archive-entry__icon" aria-hidden="true"></i>
+          <span class="archive-entry__content">
+            {% if title_link != blank %}
+              <a href="{{ title_link }}">{{ title }}</a>
+            {% else %}
+              {{ title }}
+            {% endif %}
+          </span>
+        </span>
+      </h2>
+      {% if entry.authors != blank %}
+        <div class="archive-entry__meta">
+          <i class="fa fa-users archive-entry__icon" aria-hidden="true"></i>
+          <span class="archive-entry__content">{{ entry.authors }}</span>
+        </div>
       {% endif %}
-    </h2>
-    {% if post.read_time %}
-      <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
-    {% endif %}
-    {% if post.date %}<p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {{ post.date | date: '%B %d, %Y' }}</p>{% endif %}
-    {% if post.venue %}<p class="archive__item-excerpt" itemprop="description">{{ post.type }}, {{ post.venue }}, {{ post.location }}</p>{% endif %}
-    {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>{% endif %}
+      {% if entry.date != blank %}
+        <div class="archive-entry__meta">
+          <i class="fa fa-calendar archive-entry__icon" aria-hidden="true"></i>
+          <span class="archive-entry__content">{{ entry.date | date: '%B %d, %Y' }}</span>
+        </div>
+      {% endif %}
+      {% if event_line != blank %}
+        <div class="archive-entry__meta" itemprop="description">
+          <i class="fa fa-map-marker archive-entry__icon" aria-hidden="true"></i>
+          <span class="archive-entry__content">{{ event_line }}</span>
+        </div>
+      {% endif %}
+      {% if resource_href != blank %}
+        <div class="archive-entry__meta">
+          <i class="fa fa-link archive-entry__icon" aria-hidden="true"></i>
+          <span class="archive-entry__content"><a href="{{ resource_href }}">{{ resource_label }}: {{ resource_text }}</a></span>
+        </div>
+      {% endif %}
+      {% if entry.excerpt != blank %}
+        <div class="archive-entry__meta" itemprop="description">
+          <i class="fa fa-file-text-o archive-entry__icon" aria-hidden="true"></i>
+          <span class="archive-entry__content">{{ entry.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}</span>
+        </div>
+      {% endif %}
+    </div>
   </article>
 </div>

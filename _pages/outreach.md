@@ -12,12 +12,12 @@ Part of my work also involves making groundwater science visible beyond academia
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
 <style>
-.outreach-section {
+.media-section {
     margin-top: 1.5rem;
 }
 
-.outreach-section h2,
-.outreach-section h3 {
+.media-section h2,
+.media-section h3 {
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
 }
@@ -90,11 +90,11 @@ Part of my work also involves making groundwater science visible beyond academia
     right: 0;
 }
 
-.outreach-caption {
+.media-caption {
     margin-bottom: 1.25rem;
 }
 
-.outreach-animation img {
+.media-animation img {
     width: 100%;
     max-width: 900px;
     display: block;
@@ -109,7 +109,7 @@ Part of my work also involves making groundwater science visible beyond academia
 }
 </style>
 
-<div class="outreach-section">
+<div class="media-section">
     <h2>CNRS outreach video</h2>
     <div class="video-wrapper">
         <iframe
@@ -119,7 +119,7 @@ Part of my work also involves making groundwater science visible beyond academia
             allowfullscreen>
         </iframe>
     </div>
-    <p class="outreach-caption">
+    <p class="media-caption">
         Video: <a href="https://www.youtube.com/watch?v=fTFC5wVkQHY">Making groundwater visible</a>, produced for the 80 years of CNRS.
     </p>
 
@@ -132,7 +132,7 @@ Part of my work also involves making groundwater science visible beyond academia
         </div>
         <button id="nextBtn" class="navButton" onclick="nextPages()">&#10095;</button>
     </div>
-    <p class="outreach-caption">
+    <p class="media-caption">
         Graphic report: <a href="https://grand-format.net/quand-les-nappes-montent/">Quand les nappes montent</a>, published by Grand Format.
     </p>
 </div>

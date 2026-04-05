@@ -4,11 +4,17 @@
 - Multi-source constraints for groundwater models using field observations, tracers, stream networks and geospatial data.
 - Groundwater transit times, recharge dynamics, groundwater-surface water interactions, and climate-change impacts on water resources.
 
-<div class="outreach-animation">
-    <center>
-        <img src="{{ '/files/Breville.gif' | relative_url }}" alt="Animation of groundwater dynamics in a coastal area" width="630">
-        <img src="{{ '/files/mars.gif' | relative_url }}" alt="Animation of global hydrological model on Mars" width="300">
-    </center>
+<div class="media-animation">
+    <div style="display: grid; grid-template-columns: minmax(0, 2.1fr) minmax(0, 1fr); gap: 1rem; align-items: center; width: 100%;">
+        <img
+            src="{{ '/files/Breville.gif' | relative_url }}"
+            alt="Animation of groundwater dynamics in a coastal area"
+            style="display: block; width: 100%; max-width: 630px; height: auto; justify-self: end;">
+        <img
+            src="{{ '/files/mars.gif' | relative_url }}"
+            alt="Animation of global hydrological model on Mars"
+            style="display: block; width: 100%; max-width: 300px; height: auto; justify-self: start;">
+    </div>
 </div>
 
 ## About me

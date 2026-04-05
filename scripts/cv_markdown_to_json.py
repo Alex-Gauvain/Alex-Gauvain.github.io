@@ -248,8 +248,16 @@ def parse_skills(skills_text):
     
     return skills_entries
 
-def parse_publications(pub_dir):
-    """Parse publications from the _publications directory."""
+    def load_json_entries(json_file):
+        """Load generated entries from a JSON file if it exists."""
+        if not os.path.exists(json_file):
+            return []
+
+        with open(json_file, 'r', encoding='utf-8') as file:
+            return json.load(file)
+
+    def parse_publications_from_markdown(pub_dir):
+        """Parse publications from the legacy _publications directory."""
     publications = []
     
     if not os.path.exists(pub_dir):
@@ -277,8 +285,27 @@ def parse_publications(pub_dir):
     
     return publications
 
-def parse_talks(talks_dir):
-    """Parse talks from the _talks directory."""
+    def parse_publications(repo_root):
+        """Parse publications from generated data, with a Markdown fallback."""
+        data_file = os.path.join(repo_root, "_data", "generated_publications.json")
+        generated_publications = load_json_entries(data_file)
+
+        if generated_publications:
+            return [
+                {
+                    "name": entry.get("title", ""),
+                    "publisher": entry.get("venue", ""),
+                    "releaseDate": entry.get("date", ""),
+                    "website": entry.get("paperurl", ""),
+                    "summary": entry.get("excerpt", "")
+                }
+                for entry in generated_publications
+            ]
+
+        return parse_publications_from_markdown(os.path.join(repo_root, "_publications"))
+
+    def parse_talks_from_markdown(talks_dir):
+        """Parse talks from the legacy _talks directory."""
     talks = []
     
     if not os.path.exists(talks_dir):
@@ -305,6 +332,25 @@ def parse_talks(talks_dir):
             talks.append(talk_entry)
     
     return talks
+
+    def parse_talks(repo_root):
+        """Parse talks from generated data, with a Markdown fallback."""
+        data_file = os.path.join(repo_root, "_data", "generated_talks.json")
+        generated_talks = load_json_entries(data_file)
+
+        if generated_talks:
+            return [
+                {
+                    "name": entry.get("title", ""),
+                    "event": entry.get("venue", ""),
+                    "date": entry.get("date", ""),
+                    "location": entry.get("location", ""),
+                    "description": entry.get("excerpt", "")
+                }
+                for entry in generated_talks
+            ]
+
+        return parse_talks_from_markdown(os.path.join(repo_root, "_talks"))
 
 def parse_teaching(teaching_dir):
     """Parse teaching from the _teaching directory."""
@@ -387,10 +433,10 @@ def create_cv_json(md_file, config_file, repo_root, output_file):
     }
     
     # Add publications
-    cv_json["publications"] = parse_publications(os.path.join(repo_root, "_publications"))
+    cv_json["publications"] = parse_publications(repo_root)
     
     # Add talks
-    cv_json["presentations"] = parse_talks(os.path.join(repo_root, "_talks"))
+    cv_json["presentations"] = parse_talks(repo_root)
     
     # Add teaching
     cv_json["teaching"] = parse_teaching(os.path.join(repo_root, "_teaching"))

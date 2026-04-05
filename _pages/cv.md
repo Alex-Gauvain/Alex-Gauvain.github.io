@@ -64,6 +64,7 @@ Service and community
 
 Publications
 ======
-<ul>{% for post in site.publications reversed %}
-  {% include archive-single-cv.html %}
+{% assign publication_items = site.data.generated_publications | sort: "sort_key" | reverse %}
+<ul>{% for item in publication_items %}
+  {% include archive-single-cv.html item=item %}
 {% endfor %}</ul>
