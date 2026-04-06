@@ -1,14 +1,14 @@
 ---
 layout: archive
 title: "Scientific outreach"
-permalink: /outreach/
+permalink: /en/outreach/
 author_profile: true
 lang: en
 locale: en-US
-nav_key: en_root
+nav_key: en
 translations:
-    en: /en/outreach/
-    fr: /fr/outreach/
+  en: /en/outreach/
+  fr: /fr/outreach/
 ---
 
 {% include base_path %}

@@ -1,15 +1,12 @@
 ---
 lang: en
 locale: en-US
-nav_key: en_root
-permalink: /
+nav_key: en
+permalink: /en/
 author_profile: true
 translations:
   en: /en/
   fr: /fr/
-redirect_from: 
-  - /about/
-  - /about.html
 ---
 
 {% include_relative includes/intro.md %}

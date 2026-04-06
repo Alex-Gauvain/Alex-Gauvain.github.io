@@ -1,4 +1,41 @@
 {% assign cv = site.data.cv %}
+{% assign current_locale = page.locale | default: site.locale %}
+{% assign current_lang = page.lang | default: current_locale | slice: 0,2 %}
+{% assign cv_summary_label = "Summary" %}
+{% assign cv_education_label = "Education" %}
+{% assign cv_work_label = "Work Experience" %}
+{% assign cv_skills_label = "Skills" %}
+{% assign cv_publications_label = "Publications" %}
+{% assign cv_presentations_label = "Presentations" %}
+{% assign cv_teaching_label = "Teaching" %}
+{% assign cv_portfolio_label = "Portfolio" %}
+{% assign cv_languages_label = "Languages" %}
+{% assign cv_interests_label = "Interests" %}
+{% assign cv_references_label = "References" %}
+{% assign cv_gpa_label = "GPA" %}
+{% assign cv_courses_label = "Courses:" %}
+{% assign cv_view_publication_label = "View Publication" %}
+{% assign cv_role_label = "Role:" %}
+{% assign cv_view_project_label = "View Project" %}
+
+{% if current_lang == "fr" %}
+  {% assign cv_summary_label = "Résumé" %}
+  {% assign cv_education_label = "Formation" %}
+  {% assign cv_work_label = "Expérience professionnelle" %}
+  {% assign cv_skills_label = "Compétences" %}
+  {% assign cv_publications_label = "Publications" %}
+  {% assign cv_presentations_label = "Présentations" %}
+  {% assign cv_teaching_label = "Enseignement" %}
+  {% assign cv_portfolio_label = "Portfolio" %}
+  {% assign cv_languages_label = "Langues" %}
+  {% assign cv_interests_label = "Centres d'intérêt" %}
+  {% assign cv_references_label = "Références" %}
+  {% assign cv_gpa_label = "Moyenne" %}
+  {% assign cv_courses_label = "Cours :" %}
+  {% assign cv_view_publication_label = "Voir la publication" %}
+  {% assign cv_role_label = "Rôle :" %}
+  {% assign cv_view_project_label = "Voir le projet" %}
+{% endif %}
 
 <style>
   .archive {
@@ -63,7 +100,7 @@
   {% if cv.basics.summary %}
   <!-- Summary -->
   <div class="cv-section">
-    <h2>Summary</h2>
+    <h2>{{ cv_summary_label }}</h2>
     <p>{{ cv.basics.summary }}</p>
   </div>
   {% endif %}
@@ -71,7 +108,7 @@
   {% if cv.education.size > 0 %}
   <!-- Education -->
   <div class="cv-section">
-    <h2>Education</h2>
+    <h2>{{ cv_education_label }}</h2>
     <ul class="cv-list">
       {% for education in cv.education %}
       <li class="cv-item">
@@ -82,11 +119,11 @@
         <div class="cv-item-content">
           <div class="cv-item-subtitle">{{ education.institution }}</div>
           {% if education.gpa %}
-          <div class="cv-item-detail">GPA: {{ education.gpa }}</div>
+          <div class="cv-item-detail">{{ cv_gpa_label }}: {{ education.gpa }}</div>
           {% endif %}
           {% if education.courses.size > 0 %}
           <div class="cv-item-detail">
-            <strong>Courses:</strong> {{ education.courses | join: ", " }}
+            <strong>{{ cv_courses_label }}</strong> {{ education.courses | join: ", " }}
           </div>
           {% endif %}
         </div>
@@ -99,7 +136,7 @@
   {% if cv.work.size > 0 %}
   <!-- Work Experience -->
   <div class="cv-section">
-    <h2>Work Experience</h2>
+    <h2>{{ cv_work_label }}</h2>
     <ul class="cv-list">
       {% for work in cv.work %}
       <li class="cv-item">
@@ -129,7 +166,7 @@
   {% if cv.skills.size > 0 %}
   <!-- Skills -->
   <div class="cv-section">
-    <h2>Skills</h2>
+    <h2>{{ cv_skills_label }}</h2>
     <div class="cv-skills">
       {% for skill in cv.skills %}
       <div class="cv-skill-category">
@@ -148,7 +185,7 @@
   {% if cv.publications.size > 0 %}
   <!-- Publications -->
   <div class="cv-section">
-    <h2>Publications</h2>
+    <h2>{{ cv_publications_label }}</h2>
     <ul class="cv-list">
       {% for publication in cv.publications %}
       <li class="cv-item">
@@ -163,7 +200,7 @@
           {% endif %}
           {% if publication.website %}
           <div class="cv-item-detail">
-            <a href="{{ publication.website }}" target="_blank">View Publication</a>
+            <a href="{{ publication.website }}" target="_blank">{{ cv_view_publication_label }}</a>
           </div>
           {% endif %}
         </div>
@@ -176,7 +213,7 @@
   {% if cv.presentations.size > 0 %}
   <!-- Presentations/Talks -->
   <div class="cv-section">
-    <h2>Presentations</h2>
+    <h2>{{ cv_presentations_label }}</h2>
     <ul class="cv-list">
       {% for talk in cv.presentations %}
       <li class="cv-item">
@@ -202,7 +239,7 @@
   {% if cv.teaching.size > 0 %}
   <!-- Teaching -->
   <div class="cv-section">
-    <h2>Teaching</h2>
+    <h2>{{ cv_teaching_label }}</h2>
     <ul class="cv-list">
       {% for teaching in cv.teaching %}
       <li class="cv-item">
@@ -213,7 +250,7 @@
         <div class="cv-item-content">
           <div class="cv-item-subtitle">{{ teaching.institution }}</div>
           {% if teaching.role %}
-          <div class="cv-item-detail">Role: {{ teaching.role }}</div>
+          <div class="cv-item-detail">{{ cv_role_label }} {{ teaching.role }}</div>
           {% endif %}
           {% if teaching.description %}
           <div class="cv-item-detail">{{ teaching.description }}</div>
@@ -228,7 +265,7 @@
   {% if cv.portfolio.size > 0 %}
   <!-- Portfolio -->
   <div class="cv-section">
-    <h2>Portfolio</h2>
+    <h2>{{ cv_portfolio_label }}</h2>
     <ul class="cv-list">
       {% for item in cv.portfolio %}
       <li class="cv-item">
@@ -243,7 +280,7 @@
           {% endif %}
           {% if item.url %}
           <div class="cv-item-detail">
-            <a href="{{ item.url }}" target="_blank">View Project</a>
+            <a href="{{ item.url }}" target="_blank">{{ cv_view_project_label }}</a>
           </div>
           {% endif %}
         </div>
@@ -256,7 +293,7 @@
   {% if cv.languages.size > 0 %}
   <!-- Languages -->
   <div class="cv-section">
-    <h2>Languages</h2>
+    <h2>{{ cv_languages_label }}</h2>
     <ul class="cv-list">
       {% for language in cv.languages %}
       <li class="cv-item">
@@ -273,7 +310,7 @@
   {% if cv.interests.size > 0 %}
   <!-- Interests -->
   <div class="cv-section">
-    <h2>Interests</h2>
+    <h2>{{ cv_interests_label }}</h2>
     <ul class="cv-list">
       {% for interest in cv.interests %}
       <li class="cv-item">
@@ -292,7 +329,7 @@
   {% if cv.references.size > 0 %}
   <!-- References -->
   <div class="cv-section">
-    <h2>References</h2>
+    <h2>{{ cv_references_label }}</h2>
     <ul class="cv-list">
       {% for reference in cv.references %}
       <li class="cv-item">

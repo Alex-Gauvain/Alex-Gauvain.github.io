@@ -1,6 +1,8 @@
 {% include base_path %}
 
 {% assign entry = include.item | default: post %}
+{% assign current_locale = page.locale | default: site.locale %}
+{% assign current_lang = page.lang | default: current_locale | slice: 0,2 %}
 
 {% if entry.header.teaser %}
   {% capture teaser %}{{ entry.header.teaser }}{% endcapture %}
@@ -18,6 +20,17 @@
 {% assign resource_label = "" %}
 {% assign resource_href = "" %}
 {% assign resource_text = "" %}
+{% assign display_type = entry.type %}
+{% assign talk_date_format = '%B %d, %Y' %}
+
+{% if current_lang == 'fr' %}
+  {% assign talk_date_format = '%d/%m/%Y' %}
+  {% if entry.type == 'Oral presentation' %}
+    {% assign display_type = 'Presentation orale' %}
+  {% elsif entry.type == 'Conference contribution' %}
+    {% assign display_type = 'Communication' %}
+  {% endif %}
+{% endif %}
 
 {% if entry.doi_url != blank %}
   {% assign title_link = entry.doi_url %}
@@ -60,9 +73,9 @@
       </div>
     {% endif %}
     {% capture event_line %}
-      {% if entry.type != blank %}{{ entry.type }}{% endif %}
-      {% if entry.venue != blank %}{% if entry.type != blank %}, {% endif %}{{ entry.venue }}{% endif %}
-      {% if entry.location != blank %}{% if entry.type != blank or entry.venue != blank %}, {% endif %}{{ entry.location }}{% endif %}
+      {% if display_type != blank %}{{ display_type }}{% endif %}
+      {% if entry.venue != blank %}{% if display_type != blank %}, {% endif %}{{ entry.venue }}{% endif %}
+      {% if entry.location != blank %}{% if display_type != blank or entry.venue != blank %}, {% endif %}{{ entry.location }}{% endif %}
     {% endcapture %}
     {% assign event_line = event_line | strip %}
     <div class="archive-entry__details archive-entry__details--compact">
@@ -87,7 +100,7 @@
       {% if entry.date != blank %}
         <div class="archive-entry__meta">
           <i class="fa fa-calendar archive-entry__icon" aria-hidden="true"></i>
-          <span class="archive-entry__content">{{ entry.date | date: '%B %d, %Y' }}</span>
+          <span class="archive-entry__content">{{ entry.date | date: talk_date_format }}</span>
         </div>
       {% endif %}
       {% if event_line != blank %}

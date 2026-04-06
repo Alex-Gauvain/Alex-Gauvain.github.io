@@ -1,11 +1,11 @@
 ---
 layout: archive
 title: "Talk map"
-permalink: /talkmap.html
+permalink: /en/talkmap/
 author_profile: true
 lang: en
 locale: en-US
-nav_key: en_root
+nav_key: en
 translations:
   en: /en/talkmap/
   fr: /fr/talkmap/

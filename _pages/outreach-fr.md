@@ -1,11 +1,11 @@
 ---
 layout: archive
-title: "Scientific outreach"
-permalink: /outreach/
+title: "Diffusion scientifique"
+permalink: /fr/outreach/
 author_profile: true
-lang: en
-locale: en-US
-nav_key: en_root
+lang: fr
+locale: fr-FR
+nav_key: fr
 translations:
     en: /en/outreach/
     fr: /fr/outreach/
@@ -13,7 +13,7 @@ translations:
 
 {% include base_path %}
 
-Part of my work also involves making groundwater science visible beyond academia. The material below brings together a CNRS outreach video, a graphic report on groundwater rise along the Normandy coast, and an animation derived from coastal hydrogeological simulations.
+Une partie de mon travail consiste aussi à rendre les sciences de l'eau souterraine visibles au-delà du cadre académique. Le contenu ci-dessous rassemble une vidéo de diffusion du CNRS, un reportage dessiné sur la remontée des nappes en Normandie et une animation issue de simulations hydrogeologiques côtières.
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
@@ -116,20 +116,20 @@ Part of my work also involves making groundwater science visible beyond academia
 </style>
 
 <div class="media-section">
-    <h2>CNRS outreach video</h2>
+    <h2>Vidéo de diffusion du CNRS</h2>
     <div class="video-wrapper">
         <iframe
             src="https://www.youtube.com/embed/fTFC5wVkQHY"
-            title="Making groundwater visible"
+            title="Rendre visible l'eau souterraine"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen>
         </iframe>
     </div>
     <p class="media-caption">
-        Video: <a href="https://www.youtube.com/watch?v=fTFC5wVkQHY">Making groundwater visible</a>, produced for the 80 years of CNRS.
+        Vidéo : <a href="https://www.youtube.com/watch?v=fTFC5wVkQHY">Making groundwater visible</a>, produite pour les 80 ans du CNRS.
     </p>
 
-    <h2>Graphic report on groundwater rise</h2>
+    <h2>Reportage dessiné sur la remontée des nappes</h2>
     <div id="viewerContainer">
         <button id="prevBtn" class="navButton" onclick="prevPages()">&#10094;</button>
         <div id="viewer">
@@ -139,7 +139,7 @@ Part of my work also involves making groundwater science visible beyond academia
         <button id="nextBtn" class="navButton" onclick="nextPages()">&#10095;</button>
     </div>
     <p class="media-caption">
-        Graphic report: <a href="https://grand-format.net/quand-les-nappes-montent/">Quand les nappes montent</a>, published by Grand Format.
+        Reportage dessiné : <a href="https://grand-format.net/quand-les-nappes-montent/">Quand les nappes montent</a>, publié par Grand Format.
     </p>
 </div>
 

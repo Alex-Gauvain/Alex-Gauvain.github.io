@@ -1,16 +1,14 @@
 ---
 layout: archive
 title: "CV"
-permalink: /cv/
+permalink: /en/cv/
 author_profile: true
 lang: en
 locale: en-US
-nav_key: en_root
+nav_key: en
 translations:
   en: /en/cv/
   fr: /fr/cv/
-redirect_from:
-  - /resume
 ---
 
 {% include base_path %}

@@ -1,10 +1,10 @@
 ---
 layout: archive
-permalink: /talks/
+permalink: /fr/talks/
 author_profile: true
-lang: en
-locale: en-US
-nav_key: en_root
+lang: fr
+locale: fr-FR
+nav_key: fr
 translations:
   en: /en/talks/
   fr: /fr/talks/
@@ -14,11 +14,11 @@ translations:
 
 {% if site.talkmap_link == true %}
 
-<p style="text-decoration:underline;"><a href="/talkmap.html">See a map of all the places I've given a talk!</a></p>
+<p style="text-decoration:underline;"><a href="/fr/talkmap/">Voir une carte de tous les lieux où j'ai présenté une communication.</a></p>
 
 {% endif %}
 
-## Talks
+## Communications
 
 {% assign talks_items = site.data.generated_talks | where: "section", "talks" | sort: "sort_key" | reverse %}
 {% for item in talks_items %}

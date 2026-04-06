@@ -1,0 +1,132 @@
+<style>
+.program-intro {
+    margin-bottom: 2rem;
+}
+
+.program-list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.program-card {
+    padding: 1.5rem;
+    border: 1px solid var(--global-border-color);
+    border-left: 0.4rem solid var(--global-base-color);
+    border-radius: 0.85rem;
+    background: var(--global-bg-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+html[data-theme="dark"] .program-card {
+    box-shadow: none;
+}
+
+.program-card__header h2 {
+    margin-top: 0.15rem;
+    margin-bottom: 0.5rem;
+}
+
+.program-card__eyebrow {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+    color: var(--global-text-color-light);
+}
+
+.program-card__lead {
+    margin-bottom: 0;
+    font-size: 1.02rem;
+}
+
+.program-card__content {
+    display: grid;
+    grid-template-columns: minmax(0, 2.1fr) minmax(240px, 0.9fr);
+    gap: 1.25rem;
+    align-items: start;
+    margin-top: 1.25rem;
+}
+
+.program-card__content p:first-child {
+    margin-top: 0;
+}
+
+.program-points {
+    margin-bottom: 1rem;
+}
+
+.program-points li,
+.program-side li {
+    margin-bottom: 0.35rem;
+}
+
+.program-side {
+    padding: 1rem;
+    border: 1px solid var(--global-border-color);
+    border-radius: 0.75rem;
+    background: var(--global-code-background-color);
+}
+
+.program-side h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+}
+
+.program-side ul {
+    margin-bottom: 0;
+}
+
+.program-side img {
+    display: block;
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto 1rem;
+    border-radius: 0.6rem;
+}
+
+.program-side__logo {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+}
+
+.program-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1rem;
+}
+
+.program-related {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--global-border-color);
+}
+
+.program-related h3 {
+    margin-top: 0;
+}
+
+.program-related h3 + .list__item,
+.program-related h3 + .archive__item {
+    margin-top: 0;
+}
+
+.program-related .list__item {
+    margin-bottom: 0.75rem;
+}
+
+@media (max-width: 900px) {
+    .program-card__content {
+        grid-template-columns: 1fr;
+    }
+
+    .program-side img {
+        max-width: 320px;
+    }
+
+    .program-side__logo {
+        max-width: 100%;
+    }
+}
+</style>

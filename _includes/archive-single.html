@@ -1,6 +1,8 @@
 {% include base_path %}
 
 {% assign entry = include.item | default: post %}
+{% assign current_locale = page.locale | default: site.locale %}
+{% assign current_lang = page.lang | default: current_locale | slice: 0,2 %}
 
 {% if entry.header.teaser %}
   {% capture teaser %}{{ entry.header.teaser }}{% endcapture %}
@@ -67,8 +69,18 @@
       {% endcapture %}
       {% assign publication_line = publication_line | strip %}
       {% assign publication_prefix = "Published in" %}
+      {% assign pdf_label = "Open PDF" %}
+      {% assign pdf_title = "Open PDF in a new tab" %}
+      {% if current_lang == "fr" %}
+        {% assign publication_prefix = "Publié dans" %}
+        {% assign pdf_label = "Ouvrir le PDF" %}
+        {% assign pdf_title = "Ouvrir le PDF dans un nouvel onglet" %}
+      {% endif %}
       {% if entry.publication_state == "submitted" %}
         {% assign publication_prefix = "Submitted in" %}
+        {% if current_lang == "fr" %}
+          {% assign publication_prefix = "Soumis à" %}
+        {% endif %}
       {% endif %}
 
       <div class="archive-entry__details archive-entry__details--compact">
@@ -84,9 +96,9 @@
             </span>
 
             {% if entry.local_pdf_url != blank %}
-              <a class="btn btn--small archive-entry__download archive-entry__download--title" href="{{ base_path }}{{ entry.local_pdf_url }}" target="_blank" rel="noopener noreferrer" title="Open PDF in a new tab">
+              <a class="btn btn--small archive-entry__download archive-entry__download--title" href="{{ base_path }}{{ entry.local_pdf_url }}" target="_blank" rel="noopener noreferrer" title="{{ pdf_title }}">
                 <i class="fa fa-external-link" aria-hidden="true"></i>
-                Open PDF
+                {{ pdf_label }}
               </a>
             {% endif %}
           </span>

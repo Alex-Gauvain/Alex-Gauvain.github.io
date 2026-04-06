@@ -1,0 +1,7 @@
+# Science ouverte, logiciels et service
+- *2020.12* [ByteDance Scholars Program](https://ur.bytedance.com/scholarship) (10 étudiants en Chine chaque année)
+- [HydroModPy](https://github.com/HydroModPy/HydroModPy/tree/dev-refact) est une boîte à outils Python open-source pour la modélisation des nappes peu profondes à l'échelle du bassin versant, développée pour la recherche, les flux de travail reproductibles et l'enseignement.
+- La composante hydrologique du Planetary Evolution Model prolonge mon travail de modélisation vers Mars primitive, avec des simulations haute résolution de lacs, de chemins de débordement et de redistribution de l'eau.
+- Je contribue à plusieurs groupes de recherche collaboratifs, notamment l'équipe ERC Mars Through Time, l'équipe de développement HydroModPy, RIVAGES Normands 2100, ainsi qu'à des activités plus anciennes liées à Future Earth.
+- Mes activités de service incluent l'évaluation d'articles pour *Hydrogeology Journal* et *Geoscientific Model Development*.
+- J'organise ou j'anime régulièrement des temps de travail collectifs autour du logiciel de recherche, notamment des réunions de développement HydroModPy, des ateliers de refactorisation et des activités liées aux conférences Mars Through Time.

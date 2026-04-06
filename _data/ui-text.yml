@@ -102,7 +102,7 @@ fr: &DEFAULT_FR
   breadcrumb_separator       : "/"
   toc_label                  : "Sur cette page"
   ext_link_label             : "Lien direct"
-  less_than                  : "plus petit que"
+  less_than                  : "moins de"
   minute_read                : "minute de lecture"
   share_on_label             : "Partager sur"
   meta_label                 :
@@ -113,7 +113,7 @@ fr: &DEFAULT_FR
   comments_title             :
   more_label                 : "Lire plus"
   related_label              : "Vous pourriez aimer"
-  follow_label               : "Suivez moi"
+  follow_label               : "Suivre :"
   feed_label                 : "Flux"
   powered_by                 : "Propulsé par"
   website_label              : "Site"

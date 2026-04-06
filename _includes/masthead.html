@@ -1,23 +1,67 @@
 {% include base_path %}
+{% assign current_locale = page.locale | default: site.locale %}
+{% assign current_lang = page.lang | default: current_locale | slice: 0,2 %}
+{% assign nav_key = page.nav_key | default: current_lang %}
+{% assign navigation_links = site.data.navigation[nav_key].main | default: site.data.navigation.en_root.main %}
+{% assign home_url = "/" %}
+{% if nav_key == "en" %}
+  {% assign home_url = "/en/" %}
+{% elsif current_lang == "fr" %}
+  {% assign home_url = "/fr/" %}
+{% endif %}
+{% assign switch_lang = "" %}
+{% assign switch_url = "" %}
+{% assign switch_label = "" %}
+{% assign switch_title = "" %}
+{% assign switch_flag_class = "" %}
+{% if page.translations %}
+  {% if current_lang == 'fr' and page.translations.en %}
+    {% assign switch_lang = 'en' %}
+    {% assign switch_url = page.translations.en %}
+    {% assign switch_label = 'EN' %}
+    {% assign switch_title = 'Switch to English' %}
+    {% assign switch_flag_class = 'flag--en' %}
+  {% elsif page.translations.fr %}
+    {% assign switch_lang = 'fr' %}
+    {% assign switch_url = page.translations.fr %}
+    {% assign switch_label = 'FR' %}
+    {% assign switch_title = 'Passer en francais' %}
+    {% assign switch_flag_class = 'flag--fr' %}
+  {% endif %}
+{% endif %}
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         <button><span class="navicon"></span></button>
         <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg persist {% if page.url == '/' or page.url == '/index.html' %}selected{% endif %}">
-            <a href="{{ base_path }}/">{{ site.title }}</a>
+          <li class="masthead__menu-item masthead__menu-item--lg persist {% if page.url == home_url or page.url == home_url | append: 'index.html' %}selected{% endif %}">
+            <a href="{{ base_path }}{{ home_url }}">{{ site.title }}</a>
           </li>
-          {% for link in site.data.navigation.main %}
+          {% for link in navigation_links %}
             {% if link.url contains 'http' %}
               {% assign domain = '' %}
             {% else %}
               {% assign domain = base_path %}
             {% endif %}
-            <li class="masthead__menu-item {% if page.url contains link.url and link.url != '/' %}selected{% endif %}">
+            {% assign link_selected = false %}
+            {% if page.url == link.url %}
+              {% assign link_selected = true %}
+            {% elsif link.url != home_url and page.url contains link.url %}
+              {% assign link_selected = true %}
+            {% endif %}
+            <li class="masthead__menu-item {% if link_selected %}selected{% endif %}">
               <a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
             </li>
           {% endfor %}
+          {% if switch_url != blank %}
+            <li class="masthead__menu-item masthead__language-switcher persist">
+              <a href="{{ base_path }}{{ switch_url }}" title="{{ switch_title }}" aria-label="{{ switch_title }}">
+                <span class="masthead__language-flag {{ switch_flag_class }}" aria-hidden="true"></span>
+                <span class="masthead__language-label">{{ switch_label }}</span>
+              </a>
+            </li>
+          {% endif %}
           <li id="theme-toggle" class="masthead__menu-item persist tail">
             <a role="button" aria-labelledby="theme-icon"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>
           </li>

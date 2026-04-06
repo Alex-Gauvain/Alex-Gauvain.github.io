@@ -1,10 +1,10 @@
 ---
 layout: archive
-permalink: /talks/
+permalink: /en/talks/
 author_profile: true
 lang: en
 locale: en-US
-nav_key: en_root
+nav_key: en
 translations:
   en: /en/talks/
   fr: /fr/talks/
@@ -14,7 +14,7 @@ translations:
 
 {% if site.talkmap_link == true %}
 
-<p style="text-decoration:underline;"><a href="/talkmap.html">See a map of all the places I've given a talk!</a></p>
+<p style="text-decoration:underline;"><a href="/en/talkmap/">See a map of all the places I've given a talk!</a></p>
 
 {% endif %}
 

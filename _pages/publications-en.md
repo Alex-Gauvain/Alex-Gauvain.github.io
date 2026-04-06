@@ -1,11 +1,11 @@
 ---
 layout: archive
 title: ""
-permalink: /publications/
+permalink: /en/publications/
 author_profile: true
 lang: en
 locale: en-US
-nav_key: en_root
+nav_key: en
 translations:
   en: /en/publications/
   fr: /fr/publications/

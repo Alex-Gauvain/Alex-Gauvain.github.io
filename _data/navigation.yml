@@ -7,18 +7,62 @@
 # NOTE that only one of the CV options should be selected, the first is for the
 #      Markdown formatted page while the second is generated using JSON.
 
-main:
-  - title: "Publications"
-    url: /publications/
+en_root:
+  main:
+    - title: "Publications"
+      url: /publications/
 
-  - title: "Talks and Posters"
-    url: /talks/    
+    - title: "Talks and Posters"
+      url: /talks/
 
-  - title: "Media"
-    url: /outreach/
+    - title: "Programs"
+      url: /programs/
 
-  - title: "Teaching"
-    url: /teaching/    
-    
-  - title: "CV"
-    url: /cv/
+    - title: "Media"
+      url: /outreach/
+
+    - title: "Teaching"
+      url: /teaching/
+
+    - title: "CV"
+      url: /cv/
+
+en:
+  main:
+    - title: "Publications"
+      url: /en/publications/
+
+    - title: "Talks and Posters"
+      url: /en/talks/
+
+    - title: "Programs"
+      url: /en/programs/
+
+    - title: "Media"
+      url: /en/outreach/
+
+    - title: "Teaching"
+      url: /en/teaching/
+
+    - title: "CV"
+      url: /en/cv/
+
+fr:
+  main:
+    - title: "Publications"
+      url: /fr/publications/
+
+    - title: "Communications"
+      url: /fr/talks/
+
+    - title: "Programmes"
+      url: /fr/programmes/
+
+    - title: "Diffusion"
+      url: /fr/outreach/
+
+    - title: "Enseignement"
+      url: /fr/teaching/
+
+    - title: "CV"
+      url: /fr/cv/

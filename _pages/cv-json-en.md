@@ -1,16 +1,14 @@
 ---
 layout: archive
 title: "CV"
-permalink: /cv-json/
+permalink: /en/cv-json/
 author_profile: false
 lang: en
 locale: en-US
-nav_key: en_root
+nav_key: en
 translations:
   en: /en/cv-json/
   fr: /fr/cv-json/
-redirect_from:
-  - /resume-json
 ---
 
 {% include base_path %}
@@ -19,5 +17,5 @@ redirect_from:
 
 <div class="cv-download-links">
   <a href="{{ base_path }}/files/cv.pdf" class="btn btn--primary">Download CV as PDF</a>
-  <a href="{{ base_path }}" class="btn btn--inverse">View Markdown CV</a>
+  <a href="{{ base_path }}/en/cv/" class="btn btn--inverse">View Markdown CV</a>
 </div>
