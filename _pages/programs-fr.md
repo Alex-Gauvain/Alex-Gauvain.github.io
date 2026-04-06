@@ -11,4 +11,4 @@ translations:
   fr: /fr/programmes/
 ---
 
-{% include_relative includes/programs-content-fr.md %}
+{% include programs-content-fr.md %}

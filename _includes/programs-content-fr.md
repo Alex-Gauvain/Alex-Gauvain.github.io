@@ -1,4 +1,4 @@
-{% include_relative includes/programs-style.html %}
+{% include programs-style.html %}
 
 {% assign sorted_publications = site.data.generated_publications | sort: "sort_key" | reverse %}
 {% assign sorted_talks = site.data.generated_talks | sort: "sort_key" | reverse %}
