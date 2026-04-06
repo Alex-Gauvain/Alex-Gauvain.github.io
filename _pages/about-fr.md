@@ -14,7 +14,3 @@ translations:
 {% include_relative includes/news-fr.md %}
 
 {% include_relative includes/pub-fr.md %}
-
-{% include_relative includes/honers-fr.md %}
-
-{% include_relative includes/others-fr.md %}
