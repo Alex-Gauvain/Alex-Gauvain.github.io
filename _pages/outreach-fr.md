@@ -1,6 +1,5 @@
 ---
 layout: archive
-title: "Diffusion scientifique"
 permalink: /fr/outreach/
 author_profile: true
 lang: fr
@@ -12,8 +11,6 @@ translations:
 ---
 
 {% include base_path %}
-
-Une partie de mon travail consiste aussi à rendre les sciences de l'eau souterraine visibles au-delà du cadre académique. Le contenu ci-dessous rassemble une vidéo de diffusion du CNRS, un reportage dessiné sur la remontée des nappes en Normandie et une animation issue de simulations hydrogeologiques côtières.
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
@@ -114,6 +111,7 @@ Une partie de mon travail consiste aussi à rendre les sciences de l'eau souterr
     }
 }
 </style>
+<section class="page__content" itemprop="text" markdown="1">
 
 <div class="media-section">
     <h2>Vidéo de diffusion du CNRS</h2>
@@ -126,7 +124,7 @@ Une partie de mon travail consiste aussi à rendre les sciences de l'eau souterr
         </iframe>
     </div>
     <p class="media-caption">
-        Vidéo : <a href="https://www.youtube.com/watch?v=fTFC5wVkQHY">Making groundwater visible</a>, produite pour les 80 ans du CNRS.
+        Vidéo : <a href="https://www.youtube.com/watch?v=fTFC5wVkQHY">Rendre visible le monde des eaux souterraines</a>, produite pour les 80 ans du CNRS.
     </p>
 
     <h2>Reportage dessiné sur la remontée des nappes</h2>
@@ -139,10 +137,10 @@ Une partie de mon travail consiste aussi à rendre les sciences de l'eau souterr
         <button id="nextBtn" class="navButton" onclick="nextPages()">&#10095;</button>
     </div>
     <p class="media-caption">
-        Reportage dessiné : <a href="https://grand-format.net/quand-les-nappes-montent/">Quand les nappes montent</a>, publié par Grand Format.
+        Bande dessiné : <a href="https://grand-format.net/quand-les-nappes-montent/">Quand les nappes montent</a>, publié par Grand Format.
     </p>
 </div>
-
+</section>
 <script>
 const pdfUrl = "{{ '/files/BD-Normandie-Nappes.pdf' | relative_url }}";
 const MAX_PAGE_WIDTH = 460;

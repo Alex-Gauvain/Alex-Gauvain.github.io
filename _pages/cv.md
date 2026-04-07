@@ -1,6 +1,5 @@
 ---
 layout: archive
-title: "CV"
 permalink: /cv/
 author_profile: true
 lang: en
@@ -15,8 +14,9 @@ redirect_from:
 
 {% include base_path %}
 
-Profile
-======
+<section class="page__content" itemprop="text" markdown="1">
+
+## Profile
 Postdoctoral researcher in hydrology and hydrogeology working on groundwater modelling, climate-change impacts on water resources, and planetary hydrology for early Mars. My work combines field observations, geospatial data, reproducible numerical modelling, and research software development.
 
 Current appointment
@@ -56,21 +56,10 @@ Research software and computing
 * PEM - hydrological component of the Planetary Evolution Model for early Mars.
 * Main languages and environments: Python, Fortran, Bash, C++, R, Matlab, Linux, Git, QGIS/ArcGIS, MODFLOW, MODPATH, MT3DMS.
 
-Selected talks and presentations
-======
-* **2025** - Constraining Early Mars Climate Through Coupled Hydrological Modeling and Comparison with Geomorphological Evidence, EPSC-DPS 2025 and Mars Through Time conference.
-* **2024** - A Global High-Resolution Hydrological Model: Conceptual Study of the Distribution of Surface Water Reservoirs on Early Mars, Tenth International Conference on Mars.
-* **2023** - HydroModPy: Une application python pour automatiser le deploiement des modeles de bassin versant a grande echelle, Reunion des sciences de la Terre.
-
 Service and community
 ======
 * Reviewer for *Hydrogeology Journal* and *Geoscientific Model Development*.
 * Organisation and animation of HydroModPy development workshops and collective coding sessions.
 * Scientific dissemination through CNRS outreach material, stakeholder-oriented transfer in RIVAGES Normands 2100, and science communication media.
 
-Publications
-======
-{% assign publication_items = site.data.generated_publications | sort: "sort_key" | reverse %}
-<ul>{% for item in publication_items %}
-  {% include archive-single-cv.html item=item %}
-{% endfor %}</ul>
+</section>

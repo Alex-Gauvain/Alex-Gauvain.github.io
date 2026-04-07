@@ -105,8 +105,8 @@ h1:before, .anchor:before {
     position: absolute;
     margin-top: .5em;
     margin-left: -.5em;
-    color: white;
-    background-color: #00369f;
+    color: var(--global-text-color);
+    background-color: var(--global-footer-bg-color);
     font-size: .8em;
 }
 

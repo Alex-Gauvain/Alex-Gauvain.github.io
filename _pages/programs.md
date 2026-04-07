@@ -1,6 +1,5 @@
 ---
 layout: archive
-title: "Programs"
 permalink: /programs/
 author_profile: true
 lang: en

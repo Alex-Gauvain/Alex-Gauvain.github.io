@@ -21,7 +21,17 @@
 
 I am a postdoctoral researcher at the Laboratoire de Meteorologie Dynamique (CNRS, IPSL, Sorbonne Universite) in Paris, where I develop a global hydrological model for early Mars within the ERC Mars Through Time project. My current work connects topography, climate scenarios and geomorphological evidence to reconstruct past surface-water dynamics at planetary scale.
 
-I completed my PhD in Hydrogeology modeling at Universite de Rennes 1 / Geosciences Rennes in 2022. My doctoral research focused on groundwater resurgence, coastal aquifers under climate stress, and catchment-scale hydrogeological modelling. Across my projects, I work at the interface between field observations, geospatial analysis, numerical modelling and knowledge transfer to stakeholders.
+My doctoral research focused on groundwater resurgence, coastal aquifers under climate stress, and catchment-scale hydrogeological modelling. Across my projects, I work at the interface between field observations, geospatial analysis, numerical modelling and knowledge transfer to stakeholders.
+
+I defended my PhD thesis on the 2nd June 2022 in front of a jury made up of:
+
+- Jean-Raynald de Dreuzy & Luc Aquilina (Université de Rennes 1) - Thesis supervisors
+- Nicolas MASSEI, Professor, UMR M2C, Université de Rouen - President of the Jury
+- Fabrice GOLFIER, Professor, GeoRessources, Université de Lorraine - Reviewer
+- Julio GONCALVES, Professor, CEREGE, Aix-Marseille Université - Reviewer
+- Danièle VALDES, Assistant Professor, UMR METIS, Université Pierre et Marie Curie - Examiner
+- Florence HABETS, SeniorResearcher, Laboratoire de Géologie de l’ENS, CNRS, PSL - Examiner
+- Frédéric GRESSELIN, DREAL Normandie - Invited
 
 I also coordinate and contribute to HydroModPy, an open-source Python toolbox designed to automate the deployment, calibration and analysis of shallow groundwater models at catchment scale. More broadly, I am interested in building reproducible modelling workflows that remain useful both for research and for teaching.
 

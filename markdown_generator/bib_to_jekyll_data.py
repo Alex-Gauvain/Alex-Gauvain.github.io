@@ -23,18 +23,13 @@ DEFAULT_ARTICLES_BIB = CAREER_ROOT / "articles.bib"
 DEFAULT_CONFERENCE_BIB = CAREER_ROOT / "conference.bib"
 DEFAULT_PUBLICATIONS_OUTPUT = REPO_ROOT / "_data" / "generated_publications.json"
 DEFAULT_TALKS_OUTPUT = REPO_ROOT / "_data" / "generated_talks.json"
+DEFAULT_LOCAL_PDF_MAPPINGS = REPO_ROOT / "_data" / "local_pdf_mappings.json"
 LOCAL_ARTICLE_PDF_SOURCE = REPO_ROOT / "_data" / "_Article"
 PUBLIC_ARTICLE_PDF_DIR = REPO_ROOT / "files" / "articles"
 PUBLIC_ARTICLE_PDF_BASE = "/files/articles"
-
-LOCAL_PDF_IGNORED_TOKENS = {
-    "alexandre",
-    "article",
-    "m1h3",
-    "m2h3",
-    "paper",
-    "pdf",
-}
+LOCAL_TALK_PDF_DIR = REPO_ROOT / "files" / "talks"
+PUBLIC_TALK_PDF_BASE = "/files/talks"
+PROFILE_OWNER_SURNAME = "gauvain"
 
 STATUS_SORT_KEYS = {
     "in prep.": 99991231,
@@ -73,12 +68,11 @@ def normalize_whitespace(value: str) -> str:
     return re.sub(r"\s+", " ", value).strip()
 
 
-def normalize_match_token(value: str | None) -> str:
+def normalize_person_token(value: str | None) -> str:
     if not value:
         return ""
 
-    decoded = decode_latex(value)
-    normalized = unicodedata.normalize("NFKD", decoded)
+    normalized = unicodedata.normalize("NFKD", decode_latex(value))
     ascii_value = normalized.encode("ascii", "ignore").decode("ascii")
     return re.sub(r"[^a-z0-9]+", "", ascii_value.lower())
 
@@ -124,20 +118,19 @@ def build_authors(entry) -> str:
     return ", ".join(author for author in authors if author)
 
 
-def build_author_match_tokens(entry) -> set[str]:
-    tokens = set()
-    for person in entry.persons.get("author", []):
-        surname_parts = []
-        if person.prelast_names:
-            surname_parts.extend(person.prelast_names)
-        if person.last_names:
-            surname_parts.extend(person.last_names)
+def is_profile_owner_first_author(entry) -> bool:
+    authors = entry.persons.get("author", [])
+    if not authors:
+        return False
 
-        token = normalize_match_token(" ".join(surname_parts))
-        if token:
-            tokens.add(token)
+    first_author = authors[0]
+    surname_parts = []
+    if first_author.prelast_names:
+        surname_parts.extend(first_author.prelast_names)
+    if first_author.last_names:
+        surname_parts.extend(first_author.last_names)
 
-    return tokens
+    return normalize_person_token(" ".join(surname_parts)) == PROFILE_OWNER_SURNAME
 
 
 def build_doi(entry) -> str:
@@ -303,30 +296,22 @@ def build_publication_item(bib_key: str, entry) -> dict:
     }
 
 
-def parse_local_pdf_metadata(pdf_path: Path) -> tuple[str, set[str]]:
-    parts = [normalize_match_token(part) for part in pdf_path.stem.split("_") if part]
-    if not parts:
-        return "", set()
-
-    year_label = parts[0] if re.fullmatch(r"(19|20)\d{2}", parts[0]) else ""
-    match_tokens = {
-        token
-        for token in parts[1:]
-        if token and token not in LOCAL_PDF_IGNORED_TOKENS
-    }
-    return year_label, match_tokens
-
-
-def sync_local_article_pdfs() -> list[Path]:
-    if not LOCAL_ARTICLE_PDF_SOURCE.exists():
-        return []
-
-    source_files = sorted(path for path in LOCAL_ARTICLE_PDF_SOURCE.glob("*.pdf") if path.is_file())
+def sync_local_article_pdfs(preserved_public_names: set[str] | None = None) -> list[Path]:
+    preserved_public_names = preserved_public_names or set()
     PUBLIC_ARTICLE_PDF_DIR.mkdir(parents=True, exist_ok=True)
+
+    if LOCAL_ARTICLE_PDF_SOURCE.exists():
+        source_files = sorted(path for path in LOCAL_ARTICLE_PDF_SOURCE.glob("*.pdf") if path.is_file())
+    else:
+        source_files = []
 
     source_names = {path.name for path in source_files}
     for existing_file in PUBLIC_ARTICLE_PDF_DIR.glob("*.pdf"):
-        if existing_file.is_file() and existing_file.name not in source_names:
+        if (
+            existing_file.is_file()
+            and existing_file.name not in source_names
+            and existing_file.name not in preserved_public_names
+        ):
             existing_file.unlink()
 
     for source_file in source_files:
@@ -335,44 +320,85 @@ def sync_local_article_pdfs() -> list[Path]:
     return source_files
 
 
-def attach_local_pdf_urls(publication_records: list[tuple[dict, Any]]) -> None:
-    source_pdf_files = sync_local_article_pdfs()
-    if not source_pdf_files:
+def load_local_pdf_mappings(path: Path) -> dict[str, dict[str, str]]:
+    empty_mapping = {"publications": {}, "talks": {}}
+    if not path.exists():
+        return empty_mapping
+
+    with path.open("r", encoding="utf-8") as stream:
+        raw_mappings = json.load(stream)
+
+    if not isinstance(raw_mappings, dict):
+        raise SystemExit(f"Invalid local PDF mapping file: expected an object in {path}")
+
+    parsed_mappings: dict[str, dict[str, str]] = {}
+    for section in ("publications", "talks"):
+        section_mapping = raw_mappings.get(section, {})
+        if section_mapping is None:
+            section_mapping = {}
+        if not isinstance(section_mapping, dict):
+            raise SystemExit(f"Invalid local PDF mapping section '{section}' in {path}")
+
+        parsed_mappings[section] = {
+            str(bibtex_key): str(pdf_name).strip()
+            for bibtex_key, pdf_name in section_mapping.items()
+            if str(pdf_name).strip()
+        }
+
+    return parsed_mappings
+
+
+def apply_local_pdf_mapping(
+    items: list[dict[str, Any]],
+    pdf_mapping: dict[str, str],
+    pdf_dir: Path,
+    public_pdf_base: str,
+    entry_label: str,
+) -> None:
+    if not pdf_mapping:
         return
 
-    publication_metadata = []
-    for item, entry in publication_records:
-        publication_metadata.append(
-            {
-                "item": item,
-                "category": item["category"],
-                "year_label": item["year_label"],
-                "author_tokens": build_author_match_tokens(entry),
-            }
-        )
+    items_by_key = {item["bibtex_key"]: item for item in items}
 
-    for pdf_path in source_pdf_files:
-        year_label, match_tokens = parse_local_pdf_metadata(pdf_path)
-        if not year_label:
-            print(f"Skipping local PDF without parsable year: {pdf_path.name}")
+    for bibtex_key, pdf_name in pdf_mapping.items():
+        item = items_by_key.get(bibtex_key)
+        if item is None:
+            print(f"Skipping unknown {entry_label} bibtex_key in local PDF mapping: {bibtex_key}")
             continue
 
-        candidates = [
-            metadata
-            for metadata in publication_metadata
-            if metadata["category"] != "conferences"
-            and metadata["year_label"] == year_label
-            and match_tokens.issubset(metadata["author_tokens"])
-        ]
-
-        if len(candidates) != 1:
-            print(
-                "Could not uniquely match local PDF "
-                f"{pdf_path.name} to a publication entry (found {len(candidates)} candidate(s))."
-            )
+        pdf_path = pdf_dir / pdf_name
+        if not pdf_path.exists():
+            print(f"Skipping missing mapped PDF for {entry_label} {bibtex_key}: {pdf_path}")
             continue
 
-        candidates[0]["item"]["local_pdf_url"] = f"{PUBLIC_ARTICLE_PDF_BASE}/{quote(pdf_path.name)}"
+        item["local_pdf_url"] = f"{public_pdf_base}/{quote(pdf_name)}"
+
+
+def apply_publication_pdf_mapping(
+    publication_items: list[dict[str, Any]],
+    pdf_mapping: dict[str, str],
+) -> None:
+    sync_local_article_pdfs(set(pdf_mapping.values()))
+    apply_local_pdf_mapping(
+        publication_items,
+        pdf_mapping,
+        PUBLIC_ARTICLE_PDF_DIR,
+        PUBLIC_ARTICLE_PDF_BASE,
+        "publication",
+    )
+
+
+def apply_talk_pdf_mapping(
+    talk_items: list[dict[str, Any]],
+    pdf_mapping: dict[str, str],
+) -> None:
+    apply_local_pdf_mapping(
+        talk_items,
+        pdf_mapping,
+        LOCAL_TALK_PDF_DIR,
+        PUBLIC_TALK_PDF_BASE,
+        "talk",
+    )
 
 
 def build_talk_item(bib_key: str, entry) -> dict:
@@ -437,20 +463,27 @@ def write_json(path: Path, items: list[dict]) -> None:
         stream.write("\n")
 
 
-def build_publications(articles_bib: Path, conference_bib: Path) -> list[dict]:
+def build_publications(articles_bib: Path, conference_bib: Path, pdf_mapping: dict[str, str]) -> list[dict]:
     publication_records = []
     for source in (articles_bib, conference_bib):
         bib_data = parse_bib_file(source)
         for bib_key, entry in bib_data.entries.items():
             publication_records.append((build_publication_item(bib_key, entry), entry))
 
-    attach_local_pdf_urls(publication_records)
-    return [item for item, _ in publication_records]
+    publication_items = [item for item, _ in publication_records]
+    apply_publication_pdf_mapping(publication_items, pdf_mapping)
+    return publication_items
 
 
-def build_talks(conference_bib: Path) -> list[dict]:
+def build_talks(conference_bib: Path, pdf_mapping: dict[str, str]) -> list[dict]:
     bib_data = parse_bib_file(conference_bib)
-    return [build_talk_item(bib_key, entry) for bib_key, entry in bib_data.entries.items()]
+    talk_items = [
+        build_talk_item(bib_key, entry)
+        for bib_key, entry in bib_data.entries.items()
+        if is_profile_owner_first_author(entry)
+    ]
+    apply_talk_pdf_mapping(talk_items, pdf_mapping)
+    return talk_items
 
 
 def parse_args() -> argparse.Namespace:
@@ -461,6 +494,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--conference-bib", type=Path, default=DEFAULT_CONFERENCE_BIB)
     parser.add_argument("--publications-output", type=Path, default=DEFAULT_PUBLICATIONS_OUTPUT)
     parser.add_argument("--talks-output", type=Path, default=DEFAULT_TALKS_OUTPUT)
+    parser.add_argument("--pdf-mappings", type=Path, default=DEFAULT_LOCAL_PDF_MAPPINGS)
     return parser.parse_args()
 
 
@@ -472,8 +506,10 @@ def main() -> int:
         missing_list = ", ".join(str(path) for path in missing_files)
         raise SystemExit(f"Missing BibTeX source file(s): {missing_list}")
 
-    publications = build_publications(args.articles_bib, args.conference_bib)
-    talks = build_talks(args.conference_bib)
+    pdf_mappings = load_local_pdf_mappings(args.pdf_mappings)
+
+    publications = build_publications(args.articles_bib, args.conference_bib, pdf_mappings["publications"])
+    talks = build_talks(args.conference_bib, pdf_mappings["talks"])
 
     write_json(args.publications_output, publications)
     write_json(args.talks_output, talks)

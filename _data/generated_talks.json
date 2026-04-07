@@ -16,7 +16,8 @@
     "external_url": "",
     "paperurl": "https://doi.org/10.5194/epsc-dps2025-1263",
     "link": "https://doi.org/10.5194/epsc-dps2025-1263",
-    "excerpt": ""
+    "excerpt": "",
+    "local_pdf_url": "/files/talks/EPSC2025.pdf"
   },
   {
     "bibtex_key": "gauvain2025constraining",
@@ -35,7 +36,8 @@
     "external_url": "",
     "paperurl": "",
     "link": "",
-    "excerpt": ""
+    "excerpt": "",
+    "local_pdf_url": "/files/talks/MTT.pdf"
   },
   {
     "bibtex_key": "gauvain2024global",
@@ -54,7 +56,8 @@
     "external_url": "https://www.hou.usra.edu/meetings/tenthmars2024/pdf/3271.pdf",
     "paperurl": "https://www.hou.usra.edu/meetings/tenthmars2024/pdf/3271.pdf",
     "link": "https://www.hou.usra.edu/meetings/tenthmars2024/pdf/3271.pdf",
-    "excerpt": ""
+    "excerpt": "",
+    "local_pdf_url": "/files/talks/MarsConf.pdf"
   },
   {
     "bibtex_key": "gauvainHighresolutionHydrologicalModel2024",
@@ -73,26 +76,8 @@
     "external_url": "",
     "paperurl": "https://doi.org/10.5194/egusphere-egu24-15674",
     "link": "https://doi.org/10.5194/egusphere-egu24-15674",
-    "excerpt": ""
-  },
-  {
-    "bibtex_key": "forget2024mars",
-    "collection": "talks",
-    "section": "talks",
-    "title": "The \"Mars Through Time\" Project: Climate Modelling of the Evolution of the Environment and Surface of Mars",
-    "authors": "F. Forget, J.-B. Clément, A. Gauvain, L. Lange, Y. Luo, M. Maurice, J. Naar, T. Pierron, E. Vos, F. Lefevre, and others",
-    "type": "Conference contribution",
-    "venue": "Tenth International Conference on Mars",
-    "location": "",
-    "date": "2024-01-01",
-    "year_label": "2024",
-    "sort_key": 20240101,
-    "doi": "",
-    "doi_url": "",
-    "external_url": "",
-    "paperurl": "",
-    "link": "",
-    "excerpt": ""
+    "excerpt": "",
+    "local_pdf_url": "/files/talks/EGU24.pdf"
   },
   {
     "bibtex_key": "gauvain2023hydromodpy",
@@ -111,7 +96,8 @@
     "external_url": "",
     "paperurl": "",
     "link": "",
-    "excerpt": ""
+    "excerpt": "",
+    "local_pdf_url": "/files/talks/RST2023.pdf"
   },
   {
     "bibtex_key": "gauvain2023development",
@@ -130,7 +116,8 @@
     "external_url": "",
     "paperurl": "",
     "link": "",
-    "excerpt": ""
+    "excerpt": "",
+    "local_pdf_url": "/files/talks/PCMDay.pdf"
   },
   {
     "bibtex_key": "gauvainVulnerabilityCoastalAreas2021",
@@ -149,7 +136,8 @@
     "external_url": "",
     "paperurl": "https://doi.org/10.5194/egusphere-egu21-14870",
     "link": "https://doi.org/10.5194/egusphere-egu21-14870",
-    "excerpt": ""
+    "excerpt": "",
+    "local_pdf_url": "/files/talks/EGU21.pdf"
   },
   {
     "bibtex_key": "gauvainMorphologicalControlsGroundwater2020",
@@ -168,7 +156,8 @@
     "external_url": "",
     "paperurl": "https://doi.org/10.5194/egusphere-egu2020-14907",
     "link": "https://doi.org/10.5194/egusphere-egu2020-14907",
-    "excerpt": ""
+    "excerpt": "",
+    "local_pdf_url": "/files/talks/EGU2020.pdf"
   },
   {
     "bibtex_key": "gauvainMarineContinentalControlsGroundwater2018",
@@ -187,6 +176,7 @@
     "external_url": "https://www.irisa.fr/sage/jocelyne/CMWR2018/pdf/CMWR2018_paper_267.pdf",
     "paperurl": "https://www.irisa.fr/sage/jocelyne/CMWR2018/pdf/CMWR2018_paper_267.pdf",
     "link": "https://www.irisa.fr/sage/jocelyne/CMWR2018/pdf/CMWR2018_paper_267.pdf",
-    "excerpt": ""
+    "excerpt": "",
+    "local_pdf_url": "/files/talks/CMWR2018.pdf"
   }
 ]

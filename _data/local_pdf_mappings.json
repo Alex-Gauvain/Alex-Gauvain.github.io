@@ -1,0 +1,27 @@
+{
+  "publications": {
+    "2023rivages": "2023_Gauvain_LeMesnil.pdf",
+    "gauvain2021geomorphological": "2021_Gauvain.pdf",
+    "abhervé2023calibration": "2023_Gauvain_Abhervé.pdf",
+    "lemesnil2024characterizing": "2024_Gauvain_LeMesnil.pdf",
+    "leray2019residence": "2019_Gauvain_Leray.pdf",
+    "marcais2018dating": "2018_Gauvain_Marcais.pdf",
+    "Sallou2020": "2020_Gauvain_Sallou.pdf",
+    "M2Gauvain2016": "2016_Gauvain_Alexandre_M2H3.pdf",
+    "M1Gauvain2015": "2015_Gauvain_Alexandre_M1H3.pdf",
+    "gauvain2022thesis": "2022_Gauvain_Thesis.pdf",
+    "gauvain2017impact": "2017_Gauvain_DREAL.pdf"
+    
+  },
+  "talks": {
+    "gauvain2025constraining": "MTT.pdf",
+    "gauvain2024global": "MarsConf.pdf",
+    "gauvain2023development": "PCMDay.pdf",
+    "gauvain2023hydromodpy": "RST2023.pdf",
+    "gauvainConstrainingEarlyMars2025": "EPSC2025.pdf",
+    "gauvainHighresolutionHydrologicalModel2024": "EGU24.pdf",
+    "gauvainVulnerabilityCoastalAreas2021": "EGU21.pdf",
+    "gauvainMorphologicalControlsGroundwater2020": "EGU2020.pdf",
+    "gauvainMarineContinentalControlsGroundwater2018": "CMWR2018.pdf"
+  }
+}

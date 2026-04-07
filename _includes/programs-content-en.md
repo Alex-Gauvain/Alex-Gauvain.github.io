@@ -3,10 +3,6 @@
 {% assign sorted_publications = site.data.generated_publications | sort: "sort_key" | reverse %}
 {% assign sorted_talks = site.data.generated_talks | sort: "sort_key" | reverse %}
 
-<div class="program-intro">
-This page gathers the two modelling programs that currently structure my work: HydroModPy for catchment-scale groundwater modelling, and a global high-resolution hydrological model used to explore surface-water dynamics on early Mars.
-</div>
-
 <div class="program-list">
   <section class="program-card">
     <div class="program-card__header">
@@ -33,13 +29,6 @@ This page gathers the two modelling programs that currently structure my work: H
 
       <aside class="program-side">
         <img class="program-side__logo" src="{{ '/images/hydromodpy-logo-long.png' | relative_url }}" alt="HydroModPy logo">
-        <h3>Scope</h3>
-        <ul>
-          <li>Python toolbox</li>
-          <li>Catchment-scale shallow groundwater</li>
-          <li>Multi-site deployment</li>
-          <li>Research and teaching</li>
-        </ul>
       </aside>
     </div>
 
@@ -84,20 +73,13 @@ This page gathers the two modelling programs that currently structure my work: H
         </ul>
 
         <div class="program-actions">
-          <a class="btn" href="{{ '/publications/' | relative_url }}">Publications</a>
-          <a class="btn btn--inverse" href="{{ '/talks/' | relative_url }}">Talks and posters</a>
+          <a class="btn" href="https://zenodo.org/records/17208793">Zenodo repository</a>
+          <a class="btn btn--inverse" href="https://egusphere.copernicus.org/preprints/2025/egusphere-2025-4992/">Documentation</a>
         </div>
       </div>
 
       <aside class="program-side">
         <img src="{{ '/files/mars.gif' | relative_url }}" alt="Animation of the global hydrological model on Mars">
-        <h3>Current focus</h3>
-        <ul>
-          <li>Planetary-scale surface hydrology</li>
-          <li>High-resolution MOLA topography</li>
-          <li>Lakes, oceans and overspill routing</li>
-          <li>Climate and geomorphological constraints</li>
-        </ul>
       </aside>
     </div>
 

@@ -22,9 +22,13 @@
 {% assign resource_text = "" %}
 {% assign display_type = entry.type %}
 {% assign talk_date_format = '%B %d, %Y' %}
+{% assign pdf_label = 'Open PDF' %}
+{% assign pdf_title = 'Open PDF in a new tab' %}
 
 {% if current_lang == 'fr' %}
   {% assign talk_date_format = '%d/%m/%Y' %}
+  {% assign pdf_label = 'Ouvrir le PDF' %}
+  {% assign pdf_title = 'Ouvrir le PDF dans un nouvel onglet' %}
   {% if entry.type == 'Oral presentation' %}
     {% assign display_type = 'Presentation orale' %}
   {% elsif entry.type == 'Conference contribution' %}
@@ -80,7 +84,7 @@
     {% assign event_line = event_line | strip %}
     <div class="archive-entry__details archive-entry__details--compact">
       <h2 class="archive__item-title archive-entry__title" itemprop="headline">
-        <span class="archive-entry__line">
+        <span class="archive-entry__line archive-entry__line--title">
           <i class="fa fa-bullhorn archive-entry__icon" aria-hidden="true"></i>
           <span class="archive-entry__content">
             {% if title_link != blank %}
@@ -89,6 +93,13 @@
               {{ title }}
             {% endif %}
           </span>
+
+          {% if entry.local_pdf_url != blank %}
+            <a class="btn btn--small archive-entry__download archive-entry__download--title" href="{{ base_path }}{{ entry.local_pdf_url }}" target="_blank" rel="noopener noreferrer" title="{{ pdf_title }}">
+              <i class="fa fa-external-link" aria-hidden="true"></i>
+              {{ pdf_label }}
+            </a>
+          {% endif %}
         </span>
       </h2>
       {% if entry.authors != blank %}

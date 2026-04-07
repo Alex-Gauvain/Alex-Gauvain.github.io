@@ -8,12 +8,33 @@ The .py files are Python scripts that that can be run from the command line (ex.
 
 The `bib_to_jekyll_data.py` script reads BibTeX sources and generates `_data/generated_publications.json` and `_data/generated_talks.json` directly for Jekyll list pages. This avoids maintaining one Markdown file per publication or talk.
 
+Local PDF links are configured explicitly in `_data/local_pdf_mappings.json`.
+
+Talks and posters are generated only from conference entries where Alexandre Gauvain is the first author.
+
+- `publications`: maps a `bibtex_key` to a PDF filename. Preferred location is `_data/_Article/`, from which the file is copied to `/files/articles/` during the build. A mapped file already present in `/files/articles/` is also accepted and preserved.
+- `talks`: maps a `bibtex_key` to a PDF filename stored directly in `/files/talks/`.
+
+Example:
+
+```json
+{
+	"publications": {
+		"lemesnil2024characterizing": "2024_Gauvain_LeMesnil.pdf"
+	},
+	"talks": {
+		"gauvainVulnerabilityCoastalAreas2021": "EGU21.pdf"
+	}
+}
+```
+
 Example:
 
 ```bash
 python3 bib_to_jekyll_data.py \
 	--articles-bib ../../Career/articles.bib \
-	--conference-bib ../../Career/conference.bib
+	--conference-bib ../../Career/conference.bib \
+	--pdf-mappings ../_data/local_pdf_mappings.json
 ```
 
 The script requires `pybtex` and `latexcodec` in the active Python environment.

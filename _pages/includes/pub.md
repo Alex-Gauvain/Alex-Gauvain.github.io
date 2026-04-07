@@ -1,25 +1,36 @@
-## Selected publications
+## Latest publications
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">GMD 2026</div><img src="{{ '/images/water_depth.png' | relative_url }}" alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">HESS 2026</div><img src="{{ '/images/hmp_deploy.png' | relative_url }}" alt="HydroModPy logo" width="100%"></div></div>
 <div class='paper-box-text' markdown="1"> 
 
-[FastSpeech: Fast, Robust and Controllable Text to Speech](https://papers.nips.cc/paper/8580-fastspeech-fast-robust-and-controllable-text-to-speech.pdf) \\
-**Yi Ren**, Yangjun Ruan, Xu Tan, Tao Qin, Sheng Zhao, Zhou Zhao, Tie-Yan Liu
+[Technical Note: HydroModPy -- a Python toolbox for deploying catchment-scale shallow groundwater models](https://doi.org/10.5194/egusphere-2026-868) \\
+**Alexandre Gauvain**, R. Abhervé, B. Boivin, C. Roques, et al.
 
-[**Project**](https://speechresearch.github.io/fastspeech/) <strong><span class='show_paper_citations' data='4FA6C0AAAAAJ:qjMakFHDy7sC'></span></strong>
-
-- FastSpeech is the first fully parallel end-to-end speech synthesis model.
-- **Academic Impact**: This work is included by many famous speech synthesis open-source projects, such as [ESPNet ![](https://img.shields.io/github/stars/espnet/espnet?style=social)](https://github.com/espnet/espnet). Our work are promoted by more than 20 media and forums, such as [机器之心](https://mp.weixin.qq.com/s/UkFadiUBy-Ymn-zhJ95JcQ)、[InfoQ](https://www.infoq.cn/article/tvy7hnin8bjvlm6g0myu).
-- **Industry Impact**: FastSpeech has been deployed in [Microsoft Azure TTS service](https://techcommunity.microsoft.com/t5/azure-ai/neural-text-to-speech-extends-support-to-15-more-languages-with/ba-p/1505911) and supports 49 more languages with state-of-the-art AI quality. It was also shown as a text-to-speech system acceleration example in [NVIDIA GTC2020](https://resources.nvidia.com/events/GTC2020s21420).
+- Submitted technical note describing HydroModPy as an open-source workflow for catchment-scale shallow groundwater modelling.
+- Designed to build, calibrate and analyse shallow groundwater models more reproducibly at catchment scale.
 </div>
 </div>
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">GMD 2025</div><img src="{{ '/images/water_depth.png' | relative_url }}" alt="Animation of global hydrological model on Mars" width="100%"></div></div>
+<div class='paper-box-text' markdown="1"> 
 
-- *A Global High-Resolution Hydrological Model to Simulate the Dynamics of Surface Liquid Reservoirs: Application on Mars* (submitted to *Geoscientific Model Development*). A km-scale hydrological framework to test early Mars surface-water scenarios against geomorphological evidence.
-- *Technical Note: HydroModPy -- a Python toolbox for deploying catchment-scale shallow groundwater models* (submitted to *Hydrology and Earth System Sciences*). An open-source workflow for building, calibrating and analysing shallow groundwater models.
-- *Characterizing Coastal Aquifer Heterogeneity from a Single Piezometer Head Chronicle* (*Journal of Hydrology*, 2024). A method to infer coastal aquifer properties from a single long piezometric record.
-- *Calibration of groundwater seepage against the spatial distribution of the stream network to assess catchment-scale hydraulic properties* (*Hydrology and Earth System Sciences*, 2023). A catchment-scale calibration strategy based on stream-network geometry.
-- *Geomorphological Controls on Groundwater Transit Times: A Synthetic Analysis at the Hillslope Scale* (*Water Resources Research*, 2021). A study linking landscape organization and groundwater transit-time distributions.
-- *Dating groundwater with dissolved silica and CFC concentrations in crystalline aquifers* (*Science of the Total Environment*, 2018). A combined tracer framework to estimate groundwater residence times.
+[A Global High-Resolution Hydrological Model to Simulate the Dynamics of Surface Liquid Reservoirs: Application on Mars](https://doi.org/10.5194/egusphere-2025-4992) \\
+**Alexandre Gauvain**, François Forget, Martin Turbet, Jean-Baptiste Clément, L. Lange, R. Vandemeulebrouck
+
+- Submitted manuscript describing a km-scale hydrological model for dynamic surface-water reservoirs on early Mars.
+- Connects topography, climate scenarios and geomorphological evidence to test plausible surface-water histories.
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">J. Hydrol. 2024</div><img src="{{ '/images/mesnil_piezo.jpg' | relative_url }}" alt="Animation of groundwater dynamics in a coastal area" width="100%"></div></div>
+<div class='paper-box-text' markdown="1"> 
+
+[Characterizing Coastal Aquifer Heterogeneity from a Single Piezometer Head Chronicle](https://doi.org/10.1016/j.jhydrol.2024.131859) \\
+Martin Le Mesnil, **Alexandre Gauvain**, Frédéric Gresselin, Luc Aquilina, Jean-Raynald de Dreuzy
+
+- Journal article on diagnosing coastal aquifer heterogeneity from a single long piezometric record.
+- Shows how long head chronicle data can constrain aquifer structure even with sparse observations.
+</div>
+</div>
 
 See the full [publications page](/publications/) for journal articles, conference papers, reports and theses.

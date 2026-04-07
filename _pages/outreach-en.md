@@ -1,6 +1,5 @@
 ---
 layout: archive
-title: "Scientific outreach"
 permalink: /en/outreach/
 author_profile: true
 lang: en
@@ -12,8 +11,6 @@ translations:
 ---
 
 {% include base_path %}
-
-Part of my work also involves making groundwater science visible beyond academia. The material below brings together a CNRS outreach video, a graphic report on groundwater rise along the Normandy coast, and an animation derived from coastal hydrogeological simulations.
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
@@ -115,18 +112,22 @@ Part of my work also involves making groundwater science visible beyond academia
 }
 </style>
 
+
+<section class="page__content" itemprop="text" markdown="1">
+
+## CNRS outreach video
+
 <div class="media-section">
-    <h2>CNRS outreach video</h2>
     <div class="video-wrapper">
         <iframe
-            src="https://www.youtube.com/embed/fTFC5wVkQHY"
+            src="https://www.youtube.com/embed/ttvEmYBBuW8"
             title="Making groundwater visible"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen>
         </iframe>
     </div>
     <p class="media-caption">
-        Video: <a href="https://www.youtube.com/watch?v=fTFC5wVkQHY">Making groundwater visible</a>, produced for the 80 years of CNRS.
+        Video: <a href="https://www.youtube.com/watch?v=ttvEmYBBuW8">How to make the groundwater world visible?</a>, produced for the 80 years of CNRS.
     </p>
 
     <h2>Graphic report on groundwater rise</h2>
@@ -142,6 +143,7 @@ Part of my work also involves making groundwater science visible beyond academia
         Graphic report: <a href="https://grand-format.net/quand-les-nappes-montent/">Quand les nappes montent</a>, published by Grand Format.
     </p>
 </div>
+</section>
 
 <script>
 const pdfUrl = "{{ '/files/BD-Normandie-Nappes.pdf' | relative_url }}";

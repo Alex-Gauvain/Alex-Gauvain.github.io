@@ -21,7 +21,15 @@
 
 Je suis chercheur postdoctoral au Laboratoire de Météorologie Dynamique (CNRS, IPSL, Sorbonne Université) à Paris, où je développe un modèle hydrologique global pour Mars primitive dans le cadre du projet ERC Mars Through Time. Mon travail actuel relie topographie, scénarios climatiques et indices géomorphologiques afin de reconstruire la dynamique passée des eaux de surface à l'échelle planétaire.
 
-J'ai soutenu ma thèse en modélisation hydrogeologique à l'Université de Rennes 1 / Géosciences Rennes en 2022. Mes travaux doctoraux portaient sur les résurgences d'eaux souterraines, les aquifères côtiers soumis aux contraintes climatiques et la modélisation hydrogeologique à l'échelle du bassin versant. À travers mes projets, je travaille à l'interface entre observations de terrain, analyse géospatiale, modélisation numérique et transfert de connaissances vers les acteurs du territoire.
+Mes travaux de thèse portaient sur les résurgences d'eaux souterraines, les aquifères côtiers soumis aux contraintes climatiques et la modélisation hydrogeologique à l'échelle du bassin versant. À travers mes projets, je travaille à l'interface entre observations de terrain, analyse géospatiale, modélisation numérique et transfert de connaissances vers les acteurs du territoire.
+J'ai soutenu ma thèse le 2 juin 2022 devant un jury composé de :
+- Jean-Raynald de Dreuzy & Luc Aquilina (Université de Rennes 1) - Directeurs de thèse
+- Nicolas MASSEI, Professeur, UMR M2C, Université de Rouen - Président du jury
+- Fabrice GOLFIER, Professeur, GeoRessources, Université de Lorraine - Rapporteur
+- Julio GONCALVES, Professeur, CEREGE, Aix-Marseille Université - Rapporteur
+- Danièle VALDES, Maître de conférences, UMR METIS, Université Pierre et Marie Curie - Examinateur
+- Florence HABETS, Chargée de recherche, Laboratoire de Géologie de l’ENS, CNRS, PSL - Examinateur
+- Frédéric GRESSELIN, DREAL Normandie - Invité  
 
 Je coordonne et contribue également à HydroModPy, une boîte à outils Python open-source conçue pour automatiser le déploiement, la calibration et l'analyse de modèles de nappes peu profondes à l'échelle du bassin versant. Plus largement, je m'intéresse à la construction de flux de travail reproductibles utiles à la fois pour la recherche et pour l'enseignement.
 

@@ -92,7 +92,8 @@
     "external_url": "https://oseren.univ-rennes.fr/files/medias/files/Rapport-final-OSUR-Novembre2017.pdf",
     "paperurl": "https://oseren.univ-rennes.fr/files/medias/files/Rapport-final-OSUR-Novembre2017.pdf",
     "link": "https://oseren.univ-rennes.fr/files/medias/files/Rapport-final-OSUR-Novembre2017.pdf",
-    "excerpt": ""
+    "excerpt": "",
+    "local_pdf_url": "/files/articles/2017_Gauvain_DREAL.pdf"
   },
   {
     "bibtex_key": "2023rivages",
@@ -171,7 +172,8 @@
     "external_url": "https://theses.hal.science/tel-03860774",
     "paperurl": "https://theses.hal.science/tel-03860774",
     "link": "https://theses.hal.science/tel-03860774",
-    "excerpt": ""
+    "excerpt": "",
+    "local_pdf_url": "/files/articles/2022_Gauvain_Thesis.pdf"
   },
   {
     "bibtex_key": "gauvain2026hydromodpy",

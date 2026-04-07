@@ -3,10 +3,6 @@
 {% assign sorted_publications = site.data.generated_publications | sort: "sort_key" | reverse %}
 {% assign sorted_talks = site.data.generated_talks | sort: "sort_key" | reverse %}
 
-<div class="program-intro">
-Cette page rassemble les deux principaux programmes de modélisation qui structurent mon travail actuel : HydroModPy pour la modélisation des nappes à l'échelle du bassin versant, et un modèle hydrologique global haute résolution destiné à explorer la dynamique des eaux de surface sur Mars primitive.
-</div>
-
 <div class="program-list">
   <section class="program-card">
     <div class="program-card__header">
@@ -33,13 +29,6 @@ Cette page rassemble les deux principaux programmes de modélisation qui structu
 
       <aside class="program-side">
         <img class="program-side__logo" src="{{ '/images/hydromodpy-logo-long.png' | relative_url }}" alt="Logo HydroModPy">
-        <h3>Périmètre</h3>
-        <ul>
-          <li>Boîte à outils Python</li>
-          <li>Nappes peu profondes à l'échelle du bassin</li>
-          <li>Déploiement multi-sites</li>
-          <li>Recherche et enseignement</li>
-        </ul>
       </aside>
     </div>
 
@@ -84,20 +73,13 @@ Cette page rassemble les deux principaux programmes de modélisation qui structu
         </ul>
 
         <div class="program-actions">
-          <a class="btn" href="{{ '/fr/publications/' | relative_url }}">Publications</a>
-          <a class="btn btn--inverse" href="{{ '/fr/talks/' | relative_url }}">Communications</a>
+          <a class="btn" href="https://zenodo.org/records/17208793">Zenodo repository</a>
+          <a class="btn btn--inverse" href="https://egusphere.copernicus.org/preprints/2025/egusphere-2025-4992/">Documentation</a>
         </div>
       </div>
 
       <aside class="program-side">
         <img src="{{ '/files/mars.gif' | relative_url }}" alt="Animation du modèle hydrologique global sur Mars">
-        <h3>Focales actuelles</h3>
-        <ul>
-          <li>Hydrologie de surface à l'échelle planétaire</li>
-          <li>Topographie MOLA haute résolution</li>
-          <li>Lacs, océans et chemins de débordement</li>
-          <li>Contraintes climatiques et géomorphologiques</li>
-        </ul>
       </aside>
     </div>
 
